@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_10-43-29_r3_c1eyes_s42/model_999.pt",
+  "task": "Isaac-Ant-R3-C1Eyes-Play-v0",
+  "terrain": "stairs",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 32.163665771484375,
+  "return_std": 14.134210586547852,
+  "return_min": -0.2930412292480469,
+  "return_median": 37.6507453918457,
+  "episode_length_mean": 760.8400268554688,
+  "fall_rate": 0.4099999964237213,
+  "upside_down_at_end_rate": 0.3999999761581421,
+  "distance_x_mean": 31.663625717163086,
+  "distance_x_max": 52.554107666015625,
+  "speed_x_mean": 2.3507585525512695
+}

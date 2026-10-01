@@ -1,0 +1,12 @@
+{
+ "submission": "F3a",
+ "description": "E15 (R2-Oracle, entropy 0.005, 1000 it) + warm-started 600 it (train_finetune.py, optimizer/LR restart)",
+ "task": "Isaac-Ant-R2-Oracle-v0",
+ "play": "Isaac-Ant-R2-Oracle-Play-v0",
+ "ckpt": "logs/rsl_rl/ant/2026-10-01_02-19-33_f3a_s47/model_599.pt",
+ "score_overrides": ["agent.algorithm.entropy_coef=0.005"],
+ "runs": {"42": "f3a_s42", "43": "f3a_s43", "47": "f3a_s47", "48": "f3a_s48", "49": "f3a_s49"},
+ "lockbox": 65.7,
+ "official_play_one_episode_boxes": "61.574295 ± 11.752354",
+ "note": "written manually by share-fb at 02:58 because the running queue_fb_b5.py was started before the state-file patch"
+}

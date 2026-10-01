@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_11-16-08_r3_c1eyesflatlanes_s42/model_999.pt",
+  "task": "Isaac-Ant-R3-C1EyesFlatLanes-Play-v0",
+  "terrain": "slope",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 42.687583923339844,
+  "return_std": 22.72919273376465,
+  "return_min": -0.4222879111766815,
+  "return_median": 51.589317321777344,
+  "episode_length_mean": 674.030029296875,
+  "fall_rate": 0.5399999618530273,
+  "upside_down_at_end_rate": 0.5799999833106995,
+  "distance_x_mean": 41.568363189697266,
+  "distance_x_max": 74.4292221069336,
+  "speed_x_mean": 3.4992847442626953
+}

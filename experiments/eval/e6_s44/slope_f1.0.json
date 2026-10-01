@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_01-26-19_e6_s44/model_999.pt",
+  "task": "Isaac-Ant-Rough-E4-Play-v0",
+  "terrain": "slope",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 48.96442794799805,
+  "return_std": 24.715511322021484,
+  "return_min": -1.0136412382125854,
+  "return_median": 63.16204071044922,
+  "episode_length_mean": 714.010009765625,
+  "fall_rate": 0.4599999785423279,
+  "upside_down_at_end_rate": 0.4699999988079071,
+  "distance_x_mean": 48.088809967041016,
+  "distance_x_max": 75.87881469726562,
+  "speed_x_mean": 3.6970818042755127
+}

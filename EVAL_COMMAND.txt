@@ -1,0 +1,30 @@
+실습 과제 1 평가 명령어 (최종 모델 F3a)
+
+[환경]
+conda activate lerobot-arena
+cd ~/IsaacLab_RS
+
+[1] 공식 채점: 100개 환경, 첫 에피소드 누적 보상의 평균과 표준편차 출력
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play_one_episode.py \
+  --task Isaac-Ant-R2-Oracle-Play-v0 \
+  --seed 24 \
+  --num_envs 100 \
+  --checkpoint docs/assignment1/models/f3a_final_s47.pt
+
+[2] 보행 확인 (참고 자료 p.7 형식)
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play.py \
+  --task Isaac-Ant-R2-Oracle-Play-v0 \
+  --seed 24 \
+  --num_envs 16 \
+  --checkpoint docs/assignment1/models/f3a_final_s47.pt
+
+[참고]
+- 같은 체크포인트가 학습 로그 폴더에도 있다:
+  logs/rsl_rl/ant/2026-10-01_02-19-33_f3a_s47/model_599.pt
+  (SHA256 6b5c28f1c2f24961794b49831b4fe40d55ebaf1d4230ced05f21e79981e0de61)
+- Play task(Isaac-Ant-R2-Oracle-Play-v0)의 기본 지형은 박스 ±10 cm이다. 평가 지형은
+  source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_rough2_env_cfg.py가 사용하는
+  Play 설정의 scene.terrain만 바꾸면 된다. 관측(발밑 기준 높이)과 넘어짐 판정은 /World/ground 지형을
+  광선으로 측정한다.
+- 보상과 종료 조건은 학습과 같다. 로봇 마찰 랜덤화와 커리큘럼 같은 학습 전용 요소는 Play에서 꺼져 있다.
+- 우리 측정값(박스 ±10 cm, 100 envs, seed 24): 61.57 ± 11.75

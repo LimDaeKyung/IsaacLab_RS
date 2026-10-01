@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_19-39-02_e4b_nocurriculum_s42/model_999.pt",
+  "task": "Isaac-Ant-Rough-E4b-Play-v0",
+  "terrain": "stairs",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 40.76778793334961,
+  "return_std": 17.635997772216797,
+  "return_min": -0.7806995511054993,
+  "return_median": 47.38104248046875,
+  "episode_length_mean": 805.8800048828125,
+  "fall_rate": 0.25999999046325684,
+  "upside_down_at_end_rate": 0.25999999046325684,
+  "distance_x_mean": 38.8928108215332,
+  "distance_x_max": 64.4082260131836,
+  "speed_x_mean": 2.5902135372161865
+}

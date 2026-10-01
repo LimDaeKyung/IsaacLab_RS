@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_22-26-05_e3_friction_s44/model_999.pt",
+  "task": "Isaac-Ant-Rough-E3-Play-v0",
+  "terrain": "rough_low",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 39.47929763793945,
+  "return_std": 19.251127243041992,
+  "return_min": -0.21340477466583252,
+  "return_median": 43.93336868286133,
+  "episode_length_mean": 693.97998046875,
+  "fall_rate": 0.5699999928474426,
+  "upside_down_at_end_rate": 0.5899999737739563,
+  "distance_x_mean": 36.92619705200195,
+  "distance_x_max": 62.14415740966797,
+  "speed_x_mean": 3.081265926361084
+}

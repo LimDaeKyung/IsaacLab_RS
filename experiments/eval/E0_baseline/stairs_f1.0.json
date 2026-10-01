@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-17_13-20-27_ant_baseline/model_999.pt",
+  "task": "Isaac-Ant-Eval-v0",
+  "terrain": "stairs",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "num_episodes": 100,
+  "return_mean": 6.511257171630859,
+  "return_std": 1.7014131546020508,
+  "return_min": 2.1793549060821533,
+  "return_median": 6.310787677764893,
+  "episode_length_mean": 960.0,
+  "fall_rate": 0.0,
+  "upside_down_at_end_rate": 0.07999999821186066,
+  "distance_x_mean": 0.007400817703455687,
+  "distance_x_max": 0.5738906860351562,
+  "speed_x_mean": 0.0004625511064659804
+}

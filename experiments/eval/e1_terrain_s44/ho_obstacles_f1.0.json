@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_21-56-19_e1_terrain_s44/model_999.pt",
+  "task": "Isaac-Ant-Rough-E1-Play-v0",
+  "terrain": "ho_obstacles",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 36.727943420410156,
+  "return_std": 20.985198974609375,
+  "return_min": -1.3047462701797485,
+  "return_median": 40.361183166503906,
+  "episode_length_mean": 668.219970703125,
+  "fall_rate": 0.5600000023841858,
+  "upside_down_at_end_rate": 0.5799999833106995,
+  "distance_x_mean": 35.79814147949219,
+  "distance_x_max": 66.41374969482422,
+  "speed_x_mean": 2.8433895111083984
+}

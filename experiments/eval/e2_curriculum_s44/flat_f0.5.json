@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_22-11-12_e2_curriculum_s44/model_999.pt",
+  "task": "Isaac-Ant-Rough-E2-Play-v0",
+  "terrain": "flat",
+  "friction": 0.5,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 58.628536224365234,
+  "return_std": 25.894067764282227,
+  "return_min": -0.9408025145530701,
+  "return_median": 71.60758972167969,
+  "episode_length_mean": 762.1699829101562,
+  "fall_rate": 0.3999999761581421,
+  "upside_down_at_end_rate": 0.4099999964237213,
+  "distance_x_mean": 57.9653205871582,
+  "distance_x_max": 85.42342376708984,
+  "speed_x_mean": 4.168231010437012
+}

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_16-52-55_e17_s42/model_599.pt",
+  "task": "Isaac-Ant-R4-FallRamp-Play-v0",
+  "terrain": "flat",
+  "friction": 0.5,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 83.6397476196289,
+  "return_std": 18.69200325012207,
+  "return_min": -1.8617688417434692,
+  "return_median": 88.09443664550781,
+  "episode_length_mean": 916.5499877929688,
+  "fall_rate": 0.07000000029802322,
+  "upside_down_at_end_rate": 0.07000000029802322,
+  "distance_x_mean": 81.49307250976562,
+  "distance_x_max": 91.16535186767578,
+  "speed_x_mean": 5.143871307373047
+}

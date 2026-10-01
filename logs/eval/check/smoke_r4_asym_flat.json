@@ -1,0 +1,23 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_15-30-45_smoke_r4_asym/model_1.pt",
+  "task": "Isaac-Ant-R4-Asym-Play-v0",
+  "terrain": "flat",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 16,
+  "return_mean": 7.717442512512207,
+  "return_std": 2.127979040145874,
+  "return_min": 0.7816804647445679,
+  "return_median": 8.053452491760254,
+  "episode_length_mean": 904.625,
+  "fall_rate": 0.0625,
+  "upside_down_at_end_rate": 0.0625,
+  "distance_x_mean": -0.036826908588409424,
+  "distance_x_max": 0.19876575469970703,
+  "speed_x_mean": 0.006994478404521942
+}

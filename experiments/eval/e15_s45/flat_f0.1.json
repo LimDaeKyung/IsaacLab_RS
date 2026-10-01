@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_19-06-23_e15_s45/model_999.pt",
+  "task": "Isaac-Ant-R2-Oracle-Play-v0",
+  "terrain": "flat",
+  "friction": 0.1,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 97.19670104980469,
+  "return_std": 10.441047668457031,
+  "return_min": -1.04591703414917,
+  "return_median": 98.36028289794922,
+  "episode_length_mean": 951.1599731445312,
+  "fall_rate": 0.009999999776482582,
+  "upside_down_at_end_rate": 0.009999999776482582,
+  "distance_x_mean": 92.65387725830078,
+  "distance_x_max": 99.74432373046875,
+  "speed_x_mean": 5.782976150512695
+}

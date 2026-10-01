@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_21-41-16_e3_friction_s43/model_999.pt",
+  "task": "Isaac-Ant-Rough-E3-Play-v0",
+  "terrain": "stairs",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 29.623252868652344,
+  "return_std": 16.51030158996582,
+  "return_min": -0.12757936120033264,
+  "return_median": 36.564186096191406,
+  "episode_length_mean": 689.6400146484375,
+  "fall_rate": 0.47999998927116394,
+  "upside_down_at_end_rate": 0.28999999165534973,
+  "distance_x_mean": 26.25371742248535,
+  "distance_x_max": 50.80751419067383,
+  "speed_x_mean": 1.9620540142059326
+}

@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-29_19-18-15_e4_relheight_s42/model_999.pt",
+  "task": "Isaac-Ant-Rough-E4-Play-v0",
+  "terrain": "ho_obstacles",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 16,
+  "return_mean": 27.27959632873535,
+  "return_std": 20.180763244628906,
+  "return_min": 1.5827548503875732,
+  "return_median": 23.762807846069336,
+  "episode_length_mean": 496.5625,
+  "fall_rate": 0.8125,
+  "upside_down_at_end_rate": 0.8125,
+  "distance_x_mean": 26.28351593017578,
+  "distance_x_max": 62.77975845336914,
+  "speed_x_mean": 2.7984437942504883
+}

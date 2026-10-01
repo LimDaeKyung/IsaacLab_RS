@@ -1,0 +1,23 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_10-26-28_smoke_r3/model_1.pt",
+  "task": "Isaac-Ant-R3-C1EyesFlatLanes-Play-v0",
+  "terrain": "flat",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 16,
+  "return_mean": 7.00083589553833,
+  "return_std": 2.1163456439971924,
+  "return_min": 4.803780555725098,
+  "return_median": 6.176736831665039,
+  "episode_length_mean": 960.0,
+  "fall_rate": 0.0,
+  "upside_down_at_end_rate": 0.0,
+  "distance_x_mean": -0.04469949007034302,
+  "distance_x_max": 0.11387109756469727,
+  "speed_x_mean": -0.0027937181293964386
+}

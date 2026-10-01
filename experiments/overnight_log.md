@@ -1,0 +1,365 @@
+- [2026-09-29 23:53:06] ## overnight run start (base: E4 seed 42)
+- [2026-09-29 23:53:06] E4 reference: held-out 42.4, seen 42.8, flat 64.1 (fall 32%, len 789), boxes±10 39.5
+- [2026-09-29 23:53:06] **E6 start** — entropy_coef 0.0→0.005: keep exploration alive (std collapsed to 0.02–0.06, adaptive LR hit its floor) | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 00:08:29] E6 result: held-out 49.8, seen 49.4, flat 72.1 (fall 12%, len 902), boxes±10 47.8 | final std 0.398, lr 3.90e-04 | run `logs/rsl_rl/ant/2026-09-29_23-53-12_e6_s42`
+- [2026-09-30 00:08:29] E6 ADOPTED — held-out 49.8 vs winner 42.4 (need +3), flat 72.1 vs 64.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 00:08:29] **E7 start** — flat tile share 0.10→0.25: flat regression is forgetting / too little flat experience | task Isaac-Ant-Rough-E4-Flat-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 00:23:36] E7 result: held-out 40.4, seen 40.4, flat 65.2 (fall 30%, len 848), boxes±10 38.4 | final std 0.459, lr 3.90e-04 | run `logs/rsl_rl/ant/2026-09-30_00-08-33_e7_s42`
+- [2026-09-30 00:23:36] E7 not adopted — held-out 40.4 vs winner 49.8 (need +3), flat 65.2 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 00:23:36] **E8 start** — 3-step history of dynamic terms: short memory reduces falls | task Isaac-Ant-Rough-E4-Hist-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 00:39:45] E8 result: held-out 45.3, seen 44.8, flat 65.1 (fall 22%, len 830), boxes±10 48.3 | final std 0.360, lr 9.88e-05 | run `logs/rsl_rl/ant/2026-09-30_00-23-41_e8_s42`
+- [2026-09-30 00:39:45] E8 not adopted — held-out 45.3 vs winner 49.8 (need +3), flat 65.1 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 00:39:45] **E9 start** — actor/critic observation normalization | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005', 'agent.policy.actor_obs_normalization=True', 'agent.policy.critic_obs_normalization=True']
+- [2026-09-30 00:55:16] E9 result: held-out 42.4, seen 44.7, flat 62.9 (fall 31%, len 829), boxes±10 44.0 | final std 0.546, lr 5.00e-04 | run `logs/rsl_rl/ant/2026-09-30_00-39-49_e9_s42`
+- [2026-09-30 00:55:16] E9 not adopted — held-out 42.4 vs winner 49.8 (need +3), flat 62.9 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 00:55:16] **E10 start** — weak pushes (±0.5 m/s every 10–15 s) + torso mass ×0.8–1.2 (training only) | task Isaac-Ant-Rough-E4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 01:10:45] E10 result: held-out 45.2, seen 46.1, flat 64.4 (fall 24%, len 844), boxes±10 42.8 | final std 0.417, lr 5.00e-04 | run `logs/rsl_rl/ant/2026-09-30_00-55-21_e10_s42`
+- [2026-09-30 01:10:45] E10 not adopted — held-out 45.2 vs winner 49.8 (need +3), flat 64.4 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 01:10:45] screening winner: E6 (held-out 49.8, seen 49.4, flat 72.1 (fall 12%, len 902), boxes±10 47.8)
+- [2026-09-30 01:10:45] E6 seed 43 start
+- [2026-09-30 01:26:15] E6 seed 44 start
+- [2026-09-30 01:41:46] 3-seed held-out: E6 [49.8, 43.6, 49.7] (mean 47.7) vs E4 [42.4, 46.3, 43.3] (mean 44.0) → keep E4 as submission candidate
+- [2026-09-30 01:41:46] smoke test start: E4 on Isaac-Ant-Rough-E4-Play-v0
+- [2026-09-30 01:41:58] smoke flat_f1.0_average: OK, return 64.1 ± 26.1, fall 32%
+- [2026-09-30 01:42:11] smoke flat_f1.0_multiply: OK, return 64.1 ± 26.1, fall 32%
+- [2026-09-30 01:42:26] smoke boxes_mid_f1.0_average: OK, return 39.5 ± 12.5, fall 24%
+- [2026-09-30 01:42:41] smoke boxes_mid_f1.0_multiply: OK, return 39.5 ± 12.5, fall 24%
+- [2026-09-30 01:42:54] smoke flat_f0.2_average: OK, return 70.3 ± 31.2, fall 36%
+- [2026-09-30 01:43:06] smoke flat_f0.2_multiply: OK, return 66.3 ± 25.1, fall 35%
+- [2026-09-30 01:43:21] smoke boxes_mid_f0.2_average: OK, return 41.8 ± 17.2, fall 35%
+- [2026-09-30 01:43:37] smoke boxes_mid_f0.2_multiply: OK, return 31.2 ± 16.3, fall 58%
+- [2026-09-30 01:43:52] smoke official play_one_episode.py (default Play terrain): exit 0, ['[RESULT] Episode reward total: mean=39.529328, std=12.524738', '[RESULT] Episode steps: mean=854.800000, std=225.803587']
+- [2026-09-30 01:43:52] ## overnight run done
+- [2026-09-30 01:43:59] ## round 2 start
+- [2026-09-30 01:43:59] round-1 screening winner: E6 (flags [], overrides ['agent.algorithm.entropy_coef=0.005']); round-1 submission candidate: E4
+- [2026-09-30 01:44:09] smoke r2_safe_warm (Isaac-Ant-R2-Safe-v0, warm start): FAILED
+- [2026-09-30 01:44:20] smoke r2_lowfric_air (Isaac-Ant-R2-LowFricAir-v0): OK
+- [2026-09-30 01:44:33] smoke r2_oracle_nocurr (Isaac-Ant-R2-Oracle-v0): OK
+- [2026-09-30 01:45:17] round-1 screening winner: E6 (flags [], overrides ['agent.algorithm.entropy_coef=0.005']); round-1 submission candidate: E4
+- [2026-09-30 01:45:57] round 2 restarted after fixing train_finetune.py (load_state_dict return value); LowFric+Air and Oracle smoke tests had passed, E0 lockbox finished in the first attempt
+- [2026-09-30 01:46:07] smoke r2_safe_warm_retry (Isaac-Ant-R2-Safe-v0, warm start): FAILED
+- [2026-09-30 01:46:07] LOCKBOX E0: {'lock_rails': (5.0, 76, 3.8), 'lock_gaps': (44.3, 57, 47.2), 'lock_pits': (12.3, 65, 12.3), 'lock_stones': (6.4, 66, 4.5)}
+- [2026-09-30 01:46:07] **E12 start** (improvement) — ⑤ flat first, rough later: warm start from the flat baseline (std reset 0.5) | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start from `logs/rsl_rl/ant/2026-09-17_13-20-27_ant_baseline/model_999.pt` (std reset 0.5)
+- [2026-09-30 01:46:19] E12 FAILED during training (see experiments/train_logs/e12_s42.log)
+- [2026-09-30 01:46:19] **E13 start** (improvement) — ⑦ low friction: ground multiply + robot friction 0.05–1.2 → effective 0.05–1.2 | task Isaac-Ant-R2-LowFric-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 01:46:53] round-1 screening winner: E6 (flags [], overrides ['agent.algorithm.entropy_coef=0.005']); round-1 submission candidate: E4
+- [2026-09-30 01:46:53] round 2 restarted after fixing train_finetune.py (load_state_dict return value); LowFric+Air and Oracle smoke tests had passed, E0 lockbox finished in the first attempt
+- [2026-09-30 01:47:04] smoke r2_safe_warm_retry (Isaac-Ant-R2-Safe-v0, warm start): OK
+- [2026-09-30 01:47:04] LOCKBOX E0: {'lock_rails': (5.0, 76, 3.8), 'lock_gaps': (44.3, 57, 47.2), 'lock_pits': (12.3, 65, 12.3), 'lock_stones': (6.4, 66, 4.5)}
+- [2026-09-30 01:47:04] **E11 start** (improvement) — ④ fall suppression: fall penalty −300, clearance < 0.45 m ×−5, roll/pitch rate ×−0.05 (training only), warm start + std reset 0.4 | task Isaac-Ant-R2-Safe-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start from `logs/rsl_rl/ant/2026-09-29_23-53-12_e6_s42/model_999.pt` (std reset 0.4)
+- [2026-09-30 01:57:10] E11 result: held-out -0.5, seen -0.4, flat -0.5 (fall 100%, len 36), boxes±10 -0.4 | final std 0.794, lr 2.56e-04 | run `logs/rsl_rl/ant/2026-09-30_01-47-09_e11_s42`
+- [2026-09-30 01:57:10] E11 not adopted — held-out -0.5 vs winner 49.8 (need +3), flat -0.5 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 01:57:10] **E12 start** (improvement) — ⑤ flat first, rough later: warm start from the flat baseline (std reset 0.5) | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start from `logs/rsl_rl/ant/2026-09-17_13-20-27_ant_baseline/model_999.pt` (std reset 0.5)
+- [2026-09-30 02:12:55] E12 result: held-out 51.6, seen 51.4, flat 71.3 (fall 11%, len 905), boxes±10 47.5 | final std 0.329, lr 3.84e-04 | run `logs/rsl_rl/ant/2026-09-30_01-57-15_e12_s42`
+- [2026-09-30 02:12:55] E12 not adopted — held-out 51.6 vs winner 49.8 (need +3), flat 71.3 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 02:12:55] **E13 start** (improvement) — ⑦ low friction: ground multiply + robot friction 0.05–1.2 → effective 0.05–1.2 | task Isaac-Ant-R2-LowFric-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 02:28:32] E13 result: held-out 52.0, seen 50.4, flat 72.6 (fall 10%, len 902), boxes±10 45.9 | final std 0.368, lr 3.90e-04 | run `logs/rsl_rl/ant/2026-09-30_02-12-59_e13_s42`
+- [2026-09-30 02:28:32] E13 not adopted — held-out 52.0 vs winner 49.8 (need +3), flat 72.6 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 02:28:32] **E14 start** (improvement) — ① feet air-time reward ×2.0 (threshold 0.1 s, training only) | task Isaac-Ant-R2-Air-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 02:44:44] E14 result: held-out 42.1, seen 43.7, flat 64.0 (fall 29%, len 834), boxes±10 43.5 | final std 0.466, lr 5.00e-04 | run `logs/rsl_rl/ant/2026-09-30_02-28-36_e14_s42`
+- [2026-09-30 02:44:44] E14 not adopted — held-out 42.1 vs winner 49.8 (need +3), flat 64.0 vs 72.1 (need +10 with held-out ≥ −2)
+- [2026-09-30 02:44:44] **V1 start** (verification) — ② curriculum re-test with exploration on: entropy-on winner config without curriculum | task Isaac-Ant-R2-NoCurr-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 03:00:11] V1 result: held-out 51.5, seen 52.1, flat 80.0 (fall 8%, len 906), boxes±10 46.3 | final std 0.495, lr 3.33e-04 | run `logs/rsl_rl/ant/2026-09-30_02-44-48_v1_s42`
+- [2026-09-30 03:00:11] **V3 start** (verification) — ⑥ oracle: E4 settings trained on boxes ±10 cm only | task Isaac-Ant-R2-Oracle-v0 | overrides - | 1000 it
+- [2026-09-30 03:15:04] V3 result: held-out 50.5, seen 50.3, flat 68.8 (fall 3%, len 938), boxes±10 46.9 | final std 0.064, lr 1.73e-04 | run `logs/rsl_rl/ant/2026-09-30_03-00-16_v3_s42`
+- [2026-09-30 03:15:04] V3 oracle boxes±10 46.9 vs winner 47.8 → winner reaches 102% of the oracle
+- [2026-09-30 03:15:04] **V2 start** (verification) — ③ long training with exploration on: entropy-on winner config, 3000 it (vs E5 std/lr collapse) | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-09-30 03:54:02] V2 result: held-out 52.5, seen 48.8, flat 75.2 (fall 17%, len 867), boxes±10 43.6 | final std 0.454, lr 3.90e-04 | run `logs/rsl_rl/ant/2026-09-30_03-15-09_v2_s42`
+- [2026-09-30 03:54:02] submission candidate: E4
+- [2026-09-30 03:54:02] smoke test of the submission candidate already done in round 1 (same model)
+- [2026-09-30 03:55:00] LOCKBOX E4: {'lock_rails': (58.7, 27, 57.2), 'lock_gaps': (50.9, 51, 49.8), 'lock_pits': (57.7, 33, 56.1), 'lock_stones': (20.4, 48, 16.3)} → mean return 46.9
+- [2026-09-30 03:55:00] ## round 2 done
+- [2026-09-30 10:27:52] ## round 3 start (C1 + 2×2 flat-speed study, rules: EXPERIMENTS.md §7.3)
+- [2026-09-30 10:27:52] **C1 seed 42 start** | task Isaac-Ant-R3-C1-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 10:43:24] C1 seed 42 result: held-out 48.2, seen 48.5, flat 65.2 (fall 37%, len 768), boxes±10 46.4, flat speed 4.57 m/s | final std 0.438, lr 3.90e-04 | run `logs/rsl_rl/ant/2026-09-30_10-27-56_r3_c1_s42`
+- [2026-09-30 10:43:24] **C1Eyes seed 42 start** | task Isaac-Ant-R3-C1Eyes-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 11:01:00] C1Eyes seed 42 result: held-out 36.2, seen 34.5, flat 47.1 (fall 43%, len 752), boxes±10 32.8, flat speed 3.52 m/s | final std 0.459, lr 8.78e-04 | run `logs/rsl_rl/ant/2026-09-30_10-43-29_r3_c1eyes_s42`
+- [2026-09-30 11:01:00] **C1FlatLanes seed 42 start** | task Isaac-Ant-R3-C1FlatLanes-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 11:16:04] C1FlatLanes seed 42 result: held-out 47.7, seen 43.0, flat 59.5 (fall 49%, len 739), boxes±10 40.4, flat speed 4.64 m/s | final std 0.508, lr 8.78e-04 | run `logs/rsl_rl/ant/2026-09-30_11-01-04_r3_c1flatlanes_s42`
+- [2026-09-30 11:16:04] **C1EyesFlatLanes seed 42 start** | task Isaac-Ant-R3-C1EyesFlatLanes-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 11:32:50] C1EyesFlatLanes seed 42 result: held-out 54.2, seen 47.0, flat 71.9 (fall 44%, len 757), boxes±10 41.6, flat speed 5.31 m/s | final std 0.457, lr 1.71e-04 | run `logs/rsl_rl/ant/2026-09-30_11-16-08_r3_c1eyesflatlanes_s42`
+- [2026-09-30 11:32:50] 2×2 screening: C1: held-out 48.2, flat 65.2, speed 4.57; C1Eyes: held-out 36.2, flat 47.1, speed 3.52; C1FlatLanes: held-out 47.7, flat 59.5, speed 4.64; C1EyesFlatLanes: held-out 54.2, flat 71.9, speed 5.31
+- [2026-09-30 11:32:50] selection rule (held-out ≥ C1−2 = 46.2, then highest flat) → candidate C1EyesFlatLanes
+- [2026-09-30 11:32:50] **C1EyesFlatLanes seed 43 start** | task Isaac-Ant-R3-C1EyesFlatLanes-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 11:49:10] C1EyesFlatLanes seed 43 result: held-out 46.8, seen 44.0, flat 67.0 (fall 54%, len 726), boxes±10 41.7, flat speed 5.32 m/s | final std 0.447, lr 2.60e-04 | run `logs/rsl_rl/ant/2026-09-30_11-32-54_r3_c1eyesflatlanes_s43`
+- [2026-09-30 11:49:10] **C1EyesFlatLanes seed 44 start** | task Isaac-Ant-R3-C1EyesFlatLanes-v0 | overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-09-30 12:05:47] C1EyesFlatLanes seed 44 result: held-out 42.3, seen 40.6, flat 60.2 (fall 60%, len 695), boxes±10 37.1, flat speed 5.00 m/s | final std 0.406, lr 5.77e-04 | run `logs/rsl_rl/ant/2026-09-30_11-49-14_r3_c1eyesflatlanes_s44`
+- [2026-09-30 12:05:47] C1EyesFlatLanes 3-seed: held-out [54.2, 46.8, 42.3] (mean 47.7) → cond1 False; flat [71.9, 67.0, 60.2] (mean 66.4) → cond2 False; flat speed [5.31, 5.32, 5.0] (mean 5.21 m/s)
+- [2026-09-30 12:05:47] replacement decision: keep E4
+- [2026-09-30 12:05:47] submission candidate stays E4 (smoke test and videos from round 1 / earlier apply)
+- [2026-09-30 12:05:47] ## round 3 done
+- [2026-09-30 13:30:18] ## round 4 phase A start (E4 s45-46, E6 s45-46, V3 s43-46)
+- [2026-09-30 13:30:18] **E4_relheight start** (A seed) — E4 re-check | task Isaac-Ant-Rough-E4-v0 | overrides - | 1000 it
+- [2026-09-30 13:45:55] E4_relheight result: held-out 44.5, seen 44.2, flat 69.6 (fall 13%, len 878), boxes±10 39.4 | final std 0.055, lr 5.14e-05 | run `logs/rsl_rl/ant/2026-09-30_13-30-22_e4_relheight_s45`
+- [2026-09-30 13:45:55] **E4_relheight start** (A seed) — E4 re-check | task Isaac-Ant-Rough-E4-v0 | overrides - | 1000 it
+- [2026-09-30 14:01:43] E4_relheight result: held-out 35.6, seen 35.2, flat 46.7 (fall 53%, len 718), boxes±10 32.9 | final std 0.055, lr 1.48e-04 | run `logs/rsl_rl/ant/2026-09-30_13-45-59_e4_relheight_s46`
+- [2026-09-30 14:01:43] **E6 start** (A seed) — E6 re-check | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 14:17:05] E6 result: held-out 41.6, seen 41.8, flat 54.3 (fall 38%, len 755), boxes±10 42.6 | final std 0.338, lr 5.85e-04 | run `logs/rsl_rl/ant/2026-09-30_14-01-47_e6_s45`
+- [2026-09-30 14:17:05] **E6 start** (A seed) — E6 re-check | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 14:32:26] E6 result: held-out 46.0, seen 45.9, flat 65.0 (fall 28%, len 846), boxes±10 43.9 | final std 0.379, lr 1.16e-04 | run `logs/rsl_rl/ant/2026-09-30_14-17-09_e6_s46`
+- [2026-09-30 14:32:26] **V3 start** (A seed) — V3 re-check | task Isaac-Ant-R2-Oracle-v0 | overrides - | 1000 it
+- [2026-09-30 14:46:36] V3 result: held-out 48.7, seen 47.8, flat 64.1 (fall 6%, len 916), boxes±10 48.6 | final std 0.069, lr 1.73e-04 | run `logs/rsl_rl/ant/2026-09-30_14-32-30_v3_s43`
+- [2026-09-30 14:46:36] **V3 start** (A seed) — V3 re-check | task Isaac-Ant-R2-Oracle-v0 | overrides - | 1000 it
+- [2026-09-30 15:00:29] V3 result: held-out 52.3, seen 48.8, flat 66.8 (fall 2%, len 942), boxes±10 49.6 | final std 0.070, lr 1.73e-04 | run `logs/rsl_rl/ant/2026-09-30_14-46-40_v3_s44`
+- [2026-09-30 15:00:29] **V3 start** (A seed) — V3 re-check | task Isaac-Ant-R2-Oracle-v0 | overrides - | 1000 it
+- [2026-09-30 15:15:15] V3 result: held-out 52.1, seen 48.6, flat 72.4 (fall 3%, len 936), boxes±10 48.4 | final std 0.056, lr 7.71e-05 | run `logs/rsl_rl/ant/2026-09-30_15-00-34_v3_s45`
+- [2026-09-30 15:15:15] **V3 start** (A seed) — V3 re-check | task Isaac-Ant-R2-Oracle-v0 | overrides - | 1000 it
+- [2026-09-30 15:29:33] V3 result: held-out 49.9, seen 49.7, flat 64.5 (fall 6%, len 912), boxes±10 49.1 | final std 0.044, lr 3.43e-05 | run `logs/rsl_rl/ant/2026-09-30_15-15-19_v3_s46`
+- [2026-09-30 15:29:33] ## round 4 phase A done
+- [2026-09-30 15:29:55] ## round 4 phase B (smoke) start
+- [2026-09-30 15:30:07] smoke r4_air (Isaac-Ant-R4-Air-v0): OK
+- [2026-09-30 15:30:18] smoke r4_fallramp (Isaac-Ant-R4-FallRamp-v0): OK
+- [2026-09-30 15:30:40] smoke r4_fallconst_diag (Isaac-Ant-R4-FallConst-v0): OK
+- [2026-09-30 15:30:40] E17 diagnostic (FallConst, weight −30 from the start): logged Episode_Reward/fall_penalty mean -0.90236 vs expected (fall fraction × −30 × dt / 16 s) -0.00154 → ratio 587.783 (1.0 = per-episode sum equals falls × weight × dt)
+- [2026-09-30 15:30:52] smoke r4_asym (Isaac-Ant-R4-Asym-v0): OK
+- [2026-09-30 15:31:22] smoke Asym on plane (evaluate.py exit 0) and play_one_episode.py (exit 0) → OK
+- [2026-09-30 15:31:34] smoke r4_push (Isaac-Ant-R4-Push-v0): OK
+- [2026-09-30 15:31:45] smoke r4_eyesnoise (Isaac-Ant-R4-EyesNoise-v0): OK
+- [2026-09-30 15:31:45] ## round 4 phase C (screening) start
+- [2026-09-30 15:31:45] **E15 seed 42 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 15:46:20] E15 seed 42 result: held-out 58.7, seen 55.4, flat 73.0 (fall 9%, len 913), boxes±10 56.9, held-out fall 25%, flat speed 4.60 | std 0.398, lr 8.78e-04 | `logs/rsl_rl/ant/2026-09-30_15-31-49_e15_s42`
+- [2026-09-30 15:46:20] **E15 seed 43 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 16:00:50] E15 seed 43 result: held-out 63.7, seen 60.2, flat 79.2 (fall 5%, len 917), boxes±10 61.6, held-out fall 21%, flat speed 4.67 | std 0.354, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_15-46-25_e15_s43`
+- [2026-09-30 16:00:50] **E16 seed 42 start** | task Isaac-Ant-R4-Air-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 16:16:50] E16 seed 42 result: held-out 42.2, seen 43.2, flat 59.1 (fall 36%, len 789), boxes±10 42.3, held-out fall 47%, flat speed 4.30 | std 0.476, lr 5.77e-04 | `logs/rsl_rl/ant/2026-09-30_16-00-54_e16_s42`
+- [2026-09-30 16:16:50] **E16 seed 43 start** | task Isaac-Ant-R4-Air-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 16:31:59] E16 seed 43 result: held-out 45.7, seen 45.1, flat 63.7 (fall 30%, len 828), boxes±10 43.6, held-out fall 40%, flat speed 4.35 | std 0.442, lr 7.50e-04 | `logs/rsl_rl/ant/2026-09-30_16-16-54_e16_s43`
+- [2026-09-30 16:31:59] **E17c seed 42 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-29_23-53-12_e6_s42/model_999.pt`
+- [2026-09-30 16:42:10] E17c seed 42 result: held-out 61.1, seen 58.3, flat 82.5 (fall 4%, len 934), boxes±10 54.3, held-out fall 22%, flat speed 5.08 | std 0.411, lr 5.77e-04 | `logs/rsl_rl/ant/2026-09-30_16-32-04_e17c_s42`
+- [2026-09-30 16:42:10] **E17c seed 43 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_01-10-49_e6_s43/model_999.pt`
+- [2026-09-30 16:52:50] E17c seed 43 result: held-out 52.4, seen 52.4, flat 73.2 (fall 17%, len 872), boxes±10 52.5, held-out fall 33%, flat speed 4.69 | std 0.394, lr 5.77e-04 | `logs/rsl_rl/ant/2026-09-30_16-42-14_e17c_s43`
+- [2026-09-30 16:52:50] **E17 seed 42 start** | task Isaac-Ant-R4-FallRamp-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-29_23-53-12_e6_s42/model_999.pt`
+- [2026-09-30 17:03:38] E17 seed 42 result: held-out 59.1, seen 56.1, flat 78.2 (fall 6%, len 923), boxes±10 51.1, held-out fall 24%, flat speed 4.84 | std 0.415, lr 5.77e-04 | `logs/rsl_rl/ant/2026-09-30_16-52-55_e17_s42`
+- [2026-09-30 17:03:38] **E17 seed 43 start** | task Isaac-Ant-R4-FallRamp-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_01-10-49_e6_s43/model_999.pt`
+- [2026-09-30 17:14:21] E17 seed 43 result: held-out 50.4, seen 51.1, flat 68.7 (fall 27%, len 835), boxes±10 52.0, held-out fall 41%, flat speed 4.57 | std 0.405, lr 5.77e-04 | `logs/rsl_rl/ant/2026-09-30_17-03-42_e17_s43`
+- [2026-09-30 17:14:21] **E18 seed 42 start** | task Isaac-Ant-R4-Asym-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 17:31:31] E18 seed 42 result: held-out 46.3, seen 46.7, flat 64.6 (fall 27%, len 841), boxes±10 44.6, held-out fall 37%, flat speed 4.25 | std 0.351, lr 5.00e-04 | `logs/rsl_rl/ant/2026-09-30_17-14-26_e18_s42`
+- [2026-09-30 17:31:31] **E18 seed 43 start** | task Isaac-Ant-R4-Asym-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 17:48:38] E18 seed 43 result: held-out 50.4, seen 49.2, flat 64.2 (fall 15%, len 865), boxes±10 45.7, held-out fall 28%, flat speed 4.04 | std 0.334, lr 8.65e-04 | `logs/rsl_rl/ant/2026-09-30_17-31-35_e18_s43`
+- [2026-09-30 17:48:38] **E19 seed 42 start** | task Isaac-Ant-R4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 18:03:35] E19 seed 42 result: held-out 47.9, seen 45.7, flat 60.8 (fall 32%, len 786), boxes±10 48.1, held-out fall 39%, flat speed 4.34 | std 0.422, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_17-48-43_e19_s42`
+- [2026-09-30 18:03:35] **E19 seed 43 start** | task Isaac-Ant-R4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 18:19:07] E19 seed 43 result: held-out 51.8, seen 52.0, flat 72.7 (fall 15%, len 871), boxes±10 47.0, held-out fall 33%, flat speed 4.66 | std 0.372, lr 8.78e-04 | `logs/rsl_rl/ant/2026-09-30_18-03-40_e19_s43`
+- [2026-09-30 18:19:07] **E20 seed 42 start** | task Isaac-Ant-R4-EyesNoise-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 18:35:35] E20 seed 42 result: held-out 55.6, seen 45.2, flat 76.9 (fall 31%, len 821), boxes±10 39.5, held-out fall 36%, flat speed 5.25 | std 0.514, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_18-19-11_e20_s42`
+- [2026-09-30 18:35:35] **E20 seed 43 start** | task Isaac-Ant-R4-EyesNoise-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 18:52:05] E20 seed 43 result: held-out 46.9, seen 44.0, flat 69.4 (fall 29%, len 844), boxes±10 41.9, held-out fall 47%, flat speed 4.87 | std 0.474, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_18-35-39_e20_s43`
+- [2026-09-30 18:52:05] C E15 vs v3 (2-seed): held-out 61.2 vs 49.6, held-out fall 23% vs 23%, flat 76.1 vs 66.4 → PASS
+- [2026-09-30 18:52:05] C E16 vs e6 (2-seed): held-out 44.0 vs 46.7, held-out fall 44% vs 38%, flat 61.4 vs 66.3 → fail
+- [2026-09-30 18:52:05] C E17 vs e17c (2-seed): held-out 54.7 vs 56.8, held-out fall 32% vs 27%, flat 73.4 vs 77.9 → fail
+- [2026-09-30 18:52:05] C E18 vs e6 (2-seed): held-out 48.4 vs 46.7, held-out fall 33% vs 38%, flat 64.4 vs 66.3 → fail
+- [2026-09-30 18:52:05] C E19 vs e6 (2-seed): held-out 49.8 vs 46.7, held-out fall 36% vs 38%, flat 66.8 vs 66.3 → PASS
+- [2026-09-30 18:52:05] C E20 vs r3_c1eyesflatlanes (2-seed): held-out 51.2 vs 50.5, held-out fall 41% vs 45%, flat 73.1 vs 69.4 → fail
+- [2026-09-30 18:52:05] C passed (top 3 by held-out): ['E15', 'E19']
+- [2026-09-30 18:52:05] **E15 seed 44 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 19:06:19] E15 seed 44 result: held-out 58.4, seen 55.3, flat 71.7 (fall 13%, len 896), boxes±10 57.1, held-out fall 27%, flat speed 4.52 | std 0.417, lr 8.78e-04 | `logs/rsl_rl/ant/2026-09-30_18-52-10_e15_s44`
+- [2026-09-30 19:06:19] **E15 seed 45 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 19:21:07] E15 seed 45 result: held-out 64.4, seen 58.7, flat 80.4 (fall 2%, len 943), boxes±10 58.0, held-out fall 18%, flat speed 4.91 | std 0.361, lr 3.90e-04 | `logs/rsl_rl/ant/2026-09-30_19-06-23_e15_s45`
+- [2026-09-30 19:21:07] **E15 seed 46 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 19:36:08] E15 seed 46 result: held-out 65.7, seen 60.8, flat 83.9 (fall 2%, len 942), boxes±10 60.9, held-out fall 16%, flat speed 5.02 | std 0.329, lr 3.33e-04 | `logs/rsl_rl/ant/2026-09-30_19-21-11_e15_s46`
+- [2026-09-30 19:36:08] **E19 seed 44 start** | task Isaac-Ant-R4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 19:52:20] E19 seed 44 result: held-out 49.8, seen 52.2, flat 75.1 (fall 8%, len 910), boxes±10 46.2, held-out fall 32%, flat speed 4.75 | std 0.393, lr 7.50e-04 | `logs/rsl_rl/ant/2026-09-30_19-36-12_e19_s44`
+- [2026-09-30 19:52:20] **E19 seed 45 start** | task Isaac-Ant-R4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 20:08:12] E19 seed 45 result: held-out 45.9, seen 46.0, flat 53.3 (fall 10%, len 903), boxes±10 48.2, held-out fall 22%, flat speed 3.08 | std 0.294, lr 3.90e-04 | `logs/rsl_rl/ant/2026-09-30_19-52-24_e19_s45`
+- [2026-09-30 20:08:12] **E19 seed 46 start** | task Isaac-Ant-R4-Push-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 20:23:55] E19 seed 46 result: held-out 49.2, seen 47.8, flat 66.8 (fall 22%, len 860), boxes±10 46.3, held-out fall 38%, flat speed 4.25 | std 0.370, lr 5.00e-04 | `logs/rsl_rl/ant/2026-09-30_20-08-17_e19_s46`
+- [2026-09-30 20:23:55] E E4: held-out(44-46) 41.1 vs E4 41.1, paired diff mean +0.0 [95% CI +0.0, +0.0], wins 0/3, flat 60.9 vs 60.9 → c1 False c2 False c3 True | all seeds held-out/flat: s42:42.4/64.1 s43:46.3/77.5 s44:43.3/66.4 s45:44.5/69.6 s46:35.6/46.7
+- [2026-09-30 20:23:55] E E6: held-out(44-46) 45.8 vs E4 41.1, paired diff mean +4.6 [95% CI -12.5, +21.7], wins 2/3, flat 60.9 vs 60.9 → c1 True c2 True c3 True | all seeds held-out/flat: s42:49.8/72.1 s43:43.6/60.5 s44:49.7/63.6 s45:41.6/54.3 s46:46.0/65.0
+- [2026-09-30 20:23:55] E V3: held-out(44-46) 51.4 vs E4 41.1, paired diff mean +10.3 [95% CI +1.4, +19.2], wins 3/3, flat 67.9 vs 60.9 → c1 True c2 True c3 True | all seeds held-out/flat: s42:50.5/68.8 s43:48.7/64.1 s44:52.3/66.8 s45:52.1/72.4 s46:49.9/64.5
+- [2026-09-30 20:23:55] E E15: held-out(44-46) 62.8 vs E4 41.1, paired diff mean +21.7 [95% CI +2.7, +40.7], wins 3/3, flat 78.7 vs 60.9 → c1 True c2 True c3 True | all seeds held-out/flat: s42:58.7/73.0 s43:63.7/79.2 s44:58.4/71.7 s45:64.4/80.4 s46:65.7/83.9
+- [2026-09-30 20:23:55] E E19: held-out(44-46) 48.3 vs E4 41.1, paired diff mean +7.2 [95% CI -8.2, +22.5], wins 3/3, flat 65.1 vs 60.9 → c1 True c2 True c3 True | all seeds held-out/flat: s42:47.9/60.8 s43:51.8/72.7 s44:49.8/75.1 s45:45.9/53.3 s46:49.2/66.8
+- [2026-09-30 20:25:01] LOCKBOX E15 (seed 44 checkpoint): {'lock_rails': (66.6, 15, 65.0), 'lock_gaps': (52.6, 30, 51.1), 'lock_pits': (67.9, 13, 66.0), 'lock_stones': (33.8, 23, 31.6)} → mean 55.2 (need ≥ 43.9)
+- [2026-09-30 20:25:01] round 4 final decision: submission = E15
+- [2026-09-30 20:25:14] smoke E15 flat_f1.0_average: OK
+- [2026-09-30 20:25:27] smoke E15 flat_f1.0_multiply: OK
+- [2026-09-30 20:25:42] smoke E15 boxes_mid_f1.0_average: OK
+- [2026-09-30 20:25:58] smoke E15 boxes_mid_f1.0_multiply: OK
+- [2026-09-30 20:26:12] smoke E15 flat_f0.2_average: OK
+- [2026-09-30 20:26:25] smoke E15 flat_f0.2_multiply: OK
+- [2026-09-30 20:26:41] smoke E15 boxes_mid_f0.2_average: OK
+- [2026-09-30 20:26:57] smoke E15 boxes_mid_f0.2_multiply: OK
+- [2026-09-30 20:27:13] smoke E15 official play_one_episode.py: exit 0, ['[RESULT] Episode reward total: mean=57.114736, std=15.603863', '[RESULT] Episode steps: mean=888.650000, std=200.910198']
+- [2026-09-30 20:28:06] video R4_E15_flat: OK
+- [2026-09-30 20:28:58] video R4_E15_boxes_mid: OK
+- [2026-09-30 20:28:58] ## round 4 done
+- [2026-09-30 21:02:43] ## dt check start (E4 s42-46, sim.dt 1/240 + decimation 4 vs existing 1/120 + decimation 2)
+- [2026-09-30 21:07:00] dt check noise floor (A re-run, s42): held-out 42.4 -> 42.4, flat 64.1 -> 64.1
+- [2026-09-30 21:12:06] dt check s42: held-out 42.4 -> 43.7 (fall 45% -> 38%), seen 42.8 -> 41.0, flat 64.1 -> 62.8
+- [2026-09-30 21:17:18] dt check s43: held-out 46.3 -> 44.1 (fall 36% -> 38%), seen 47.9 -> 41.2, flat 77.5 -> 64.1
+- [2026-09-30 21:22:16] dt check s44: held-out 43.3 -> 40.9 (fall 36% -> 40%), seen 43.4 -> 37.9, flat 66.4 -> 54.7
+- [2026-09-30 21:27:12] dt check s45: held-out 44.5 -> 43.4 (fall 36% -> 37%), seen 44.2 -> 39.5, flat 69.6 -> 62.4
+- [2026-09-30 21:32:30] dt check s46: held-out 35.6 -> 36.4 (fall 50% -> 43%), seen 35.2 -> 34.1, flat 46.7 -> 59.9
+- [2026-09-30 21:32:30] dt check summary (B - A, held-out, 5 paired seeds): mean -0.7 [95% CI -2.9, +1.4], B better in 2/5 | pre-registered: |mean| < 3 and CI contains 0 -> 1/120 is enough
+- [2026-09-30 21:32:30] ## dt check done
+- [2026-09-30 21:32:34] ## E21 (training-only energy weight -0.05 -> -0.02) start
+- [2026-09-30 21:32:34] **E21 seed 42 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-09-30 21:48:30] E21 seed 42 vs E4: held-out 45.9 vs 42.4, held-out fall 39% vs 45%, flat 76.3 vs 64.1, flat speed 5.53 vs 4.46, raw power (train, per s) 14.7 vs 9.2 | `logs/rsl_rl/ant/2026-09-30_21-32-38_e21_energy02_s42`
+- [2026-09-30 21:48:30] **E21 seed 43 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-09-30 22:04:29] E21 seed 43 vs E4: held-out 51.4 vs 46.3, held-out fall 32% vs 36%, flat 84.7 vs 77.5, flat speed 5.52 vs 4.65, raw power (train, per s) 13.2 vs 7.8 | `logs/rsl_rl/ant/2026-09-30_21-48-34_e21_energy02_s43`
+- [2026-09-30 22:04:29] E21 vs E4 (2-seed): held-out 48.7 vs 44.3, held-out fall 35% vs 40%, flat 80.5 vs 70.8 → PASS
+- [2026-09-30 22:04:29] ## E21 done
+- [2026-09-30 22:05:25] ## E22 (entropy_coef 0.01 / 0.002 on E4) start
+- [2026-09-30 22:05:25] **E22 entropy 0.01 seed 42 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.01'] | 1000 it
+- [2026-09-30 22:20:11] E22 entropy 0.01 seed 42 result: held-out 41.7, seen 42.7, flat 54.9 (fall 37%, len 782), boxes±10 39.1, held-out fall 42% | std 0.878, lr 1.12e-03 | `logs/rsl_rl/ant/2026-09-30_22-05-29_e22_ent01_s42`
+- [2026-09-30 22:20:11] **E22 entropy 0.01 seed 43 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.01'] | 1000 it
+- [2026-09-30 22:34:52] E22 entropy 0.01 seed 43 result: held-out 34.0, seen 34.3, flat 53.9 (fall 18%, len 872), boxes±10 34.3, held-out fall 50% | std 0.981, lr 8.78e-04 | `logs/rsl_rl/ant/2026-09-30_22-20-15_e22_ent01_s43`
+- [2026-09-30 22:34:52] **E22 entropy 0.002 seed 42 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.002'] | 1000 it
+- [2026-09-30 22:49:53] E22 entropy 0.002 seed 42 result: held-out 47.4, seen 48.8, flat 72.6 (fall 4%, len 928), boxes±10 46.0, held-out fall 28% | std 0.163, lr 3.33e-04 | `logs/rsl_rl/ant/2026-09-30_22-34-56_e22_ent002_s42`
+- [2026-09-30 22:49:53] **E22 entropy 0.002 seed 43 start** | task Isaac-Ant-Rough-E4-v0 | overrides ['agent.algorithm.entropy_coef=0.002'] | 1000 it
+- [2026-09-30 23:04:53] E22 entropy 0.002 seed 43 result: held-out 50.0, seen 49.1, flat 73.9 (fall 14%, len 872), boxes±10 41.9, held-out fall 32% | std 0.169, lr 3.33e-04 | `logs/rsl_rl/ant/2026-09-30_22-49-57_e22_ent002_s43`
+- [2026-09-30 23:04:53] E22 table entropy 0: held-out 44.3, held-out fall 40%, flat 70.8, final std 0.056 (s42·43)
+- [2026-09-30 23:04:54] E22 table entropy 0.002: held-out 48.7, held-out fall 30%, flat 73.2, final std 0.166 (s42·43)
+- [2026-09-30 23:04:54] E22 table entropy 0.005: held-out 46.7, held-out fall 38%, flat 66.3, final std 0.374 (s42·43)
+- [2026-09-30 23:04:54] E22 table entropy 0.01: held-out 37.8, held-out fall 46%, flat 54.4, final std 0.930 (s42·43)
+- [2026-09-30 23:04:54] E22 entropy 0.002 vs 0.005 (E6): fail
+- [2026-09-30 23:04:54] E22 entropy 0.01 vs 0.005 (E6): fail
+- [2026-09-30 23:04:54] ## E22 done
+- [2026-09-30 23:05:01] ## T1 teacher check start (E15 + privileged actor inputs: scan 45 + robot friction)
+- [2026-09-30 23:05:12] smoke t1_teacher (Isaac-Ant-R4-Teacher-v0): OK
+- [2026-09-30 23:05:12] T1 smoke: OK | friction obs line not found
+- [2026-09-30 23:05:12] **T1 seed 42 start** | task Isaac-Ant-R4-Teacher-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 23:21:42] T1 seed 42 result: held-out 63.0, seen 54.9, flat 80.3 (fall 8%, len 921), boxes±10 59.2, held-out fall 26%, flat speed 5.03 | std 0.371, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_23-05-17_t1_teacher_s42`
+- [2026-09-30 23:21:42] **T1 seed 43 start** | task Isaac-Ant-R4-Teacher-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 23:37:57] T1 seed 43 result: held-out 58.6, seen 52.1, flat 77.4 (fall 9%, len 916), boxes±10 59.9, held-out fall 29%, flat speed 4.88 | std 0.412, lr 3.90e-04 | `logs/rsl_rl/ant/2026-09-30_23-21-46_t1_teacher_s43`
+- [2026-09-30 23:37:57] T1 vs E15 (2-seed): held-out 60.8 vs 61.2 (need ≥ 64.2), held-out fall 27% vs 23%, flat 78.9 vs 76.1, flat speed 4.96 vs 4.64 → 선생 전제 불충족: 특권 정보를 줘도 E15보다 나아지지 않으므로 선생-학생 효과 기대 낮음
+- [2026-09-30 23:37:57] ## T1 done
+- [2026-09-30 23:38:50] [fb] ## batch 5 start (E15 one-change screening; rules EXPERIMENTS.md §13 / EXPERIMENTS_overnight_fb.md)
+- [2026-09-30 23:39:24] [fb] E15 s42/43 reference: held-out 61.2, flat 76.1, boxes μ0.2 multiply 34.4
+- [2026-09-30 23:39:24] **F1 seed 42 start** | task Isaac-Ant-R2-LowFricOracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-09-30 23:53:13] F1 seed 42 result: held-out 60.7, seen 55.5, flat 76.5 (fall 2%, len 942), boxes±10 54.4, held-out fall 16%, flat speed 4.45 | std 0.368, lr 5.85e-04 | `logs/rsl_rl/ant/2026-09-30_23-39-28_f1_s42`
+- [2026-09-30 23:53:29] [fb] F1 s42: held-out 60.7, flat 76.5 (speed 4.45), ho-fall 16%, boxes μ0.2 multiply 64.4 (fall 8%)
+- [2026-09-30 23:53:29] **F1 seed 43 start** | task Isaac-Ant-R2-LowFricOracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 00:07:24] F1 seed 43 result: held-out 62.4, seen 59.4, flat 84.1 (fall 3%, len 936), boxes±10 57.3, held-out fall 23%, flat speed 5.04 | std 0.391, lr 8.78e-04 | `logs/rsl_rl/ant/2026-09-30_23-53-33_f1_s43`
+- [2026-10-01 00:07:39] [fb] F1 s43: held-out 62.4, flat 84.1 (speed 5.04), ho-fall 23%, boxes μ0.2 multiply 62.9 (fall 9%)
+- [2026-10-01 00:07:39] **F3a seed 42 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_15-31-49_e15_s42/model_999.pt`
+- [2026-10-01 00:17:48] F3a seed 42 result: held-out 63.4, seen 61.4, flat 80.0 (fall 7%, len 918), boxes±10 62.4, held-out fall 21%, flat speed 5.13 | std 0.440, lr 8.65e-04 | `logs/rsl_rl/ant/2026-10-01_00-07-43_f3a_s42`
+- [2026-10-01 00:18:03] [fb] F3a s42: held-out 63.4, flat 80.0 (speed 5.13), ho-fall 21%, boxes μ0.2 multiply 24.8 (fall 60%)
+- [2026-10-01 00:18:03] **F3a seed 43 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_15-46-25_e15_s43/model_999.pt`
+- [2026-10-01 00:28:01] F3a seed 43 result: held-out 71.1, seen 66.5, flat 91.2 (fall 5%, len 923), boxes±10 69.7, held-out fall 17%, flat speed 5.53 | std 0.390, lr 5.77e-04 | `logs/rsl_rl/ant/2026-10-01_00-18-07_f3a_s43`
+- [2026-10-01 00:28:19] [fb] F3a s43: held-out 71.1, flat 91.2 (speed 5.53), ho-fall 17%, boxes μ0.2 multiply 42.1 (fall 30%)
+- [2026-10-01 00:28:19] **F3b seed 42 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1600 it
+- [2026-10-01 00:47:49] F3b seed 42 result: held-out 62.8, seen 59.0, flat 80.5 (fall 4%, len 940), boxes±10 59.1, held-out fall 22%, flat speed 5.02 | std 0.444, lr 5.85e-04 | `logs/rsl_rl/ant/2026-10-01_00-28-23_f3b_s42`
+- [2026-10-01 00:48:10] [fb] F3b s42: held-out 62.8, flat 80.5 (speed 5.02), ho-fall 22%, boxes μ0.2 multiply 32.2 (fall 52%)
+- [2026-10-01 00:48:10] **F3b seed 43 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1600 it
+- [2026-10-01 01:07:39] F3b seed 43 result: held-out 71.2, seen 66.7, flat 92.6 (fall 3%, len 940), boxes±10 70.9, held-out fall 15%, flat speed 5.60 | std 0.388, lr 2.60e-04 | `logs/rsl_rl/ant/2026-10-01_00-48-14_f3b_s43`
+- [2026-10-01 01:07:55] [fb] F3b s43: held-out 71.2, flat 92.6 (speed 5.60), ho-fall 15%, boxes μ0.2 multiply 49.7 (fall 19%)
+- [2026-10-01 01:07:55] **F2 seed 42 start** | task Isaac-Ant-R4-OracleVar-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 01:21:46] F2 seed 42 result: held-out 63.3, seen 57.4, flat 81.9 (fall 5%, len 922), boxes±10 56.4, held-out fall 24%, flat speed 5.04 | std 0.431, lr 5.85e-04 | `logs/rsl_rl/ant/2026-10-01_01-07-59_f2_s42`
+- [2026-10-01 01:22:01] [fb] F2 s42: held-out 63.3, flat 81.9 (speed 5.04), ho-fall 24%, boxes μ0.2 multiply 35.5 (fall 45%)
+- [2026-10-01 01:22:01] **F2 seed 43 start** | task Isaac-Ant-R4-OracleVar-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 01:36:12] F2 seed 43 result: held-out 63.8, seen 57.0, flat 86.5 (fall 3%, len 941), boxes±10 57.9, held-out fall 22%, flat speed 5.33 | std 0.407, lr 5.85e-04 | `logs/rsl_rl/ant/2026-10-01_01-22-06_f2_s43`
+- [2026-10-01 01:36:29] [fb] F2 s43: held-out 63.8, flat 86.5 (speed 5.33), ho-fall 22%, boxes μ0.2 multiply 40.8 (fall 30%)
+- [2026-10-01 01:36:29] [fb] screen F1: held-out 61.6 vs 61.2, flat 80.3 vs 76.1, μ0.2 multiply 63.7 vs 34.4 → PASS
+- [2026-10-01 01:36:29] [fb] screen F3a: held-out 67.3 vs 61.2, flat 85.6 vs 76.1, μ0.2 multiply 33.5 vs 34.4 → PASS
+- [2026-10-01 01:36:29] [fb] screen F3b: held-out 67.0 vs 61.2, flat 86.5 vs 76.1, μ0.2 multiply 40.9 vs 34.4 → interpretation only
+- [2026-10-01 01:36:29] [fb] screen F2: held-out 63.5 vs 61.2, flat 84.2 vs 76.1, μ0.2 multiply 38.1 vs 34.4 → fail
+- [2026-10-01 01:36:29] [fb] batch 5 screening passed: ['F3a', 'F1']
+- [2026-10-01 01:36:29] **E15 seed 47 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 01:50:26] E15 seed 47 result: held-out 56.1, seen 51.3, flat 70.4 (fall 12%, len 898), boxes±10 50.9, held-out fall 31%, flat speed 4.43 | std 0.433, lr 3.90e-04 | `logs/rsl_rl/ant/2026-10-01_01-36-33_e15_s47`
+- [2026-10-01 01:50:41] [fb] E15 s47: held-out 56.1, flat 70.4 (speed 4.43), ho-fall 31%, boxes μ0.2 multiply 24.8 (fall 77%)
+- [2026-10-01 01:50:41] **E15 seed 48 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 02:04:50] E15 seed 48 result: held-out 62.9, seen 60.1, flat 80.7 (fall 10%, len 913), boxes±10 61.5, held-out fall 22%, flat speed 5.02 | std 0.358, lr 3.90e-04 | `logs/rsl_rl/ant/2026-10-01_01-50-45_e15_s48`
+- [2026-10-01 02:05:06] [fb] E15 s48: held-out 62.9, flat 80.7 (speed 5.02), ho-fall 22%, boxes μ0.2 multiply 43.5 (fall 24%)
+- [2026-10-01 02:05:06] **E15 seed 49 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 02:19:12] E15 seed 49 result: held-out 63.6, seen 59.3, flat 82.0 (fall 4%, len 936), boxes±10 62.0, held-out fall 21%, flat speed 4.88 | std 0.393, lr 5.85e-04 | `logs/rsl_rl/ant/2026-10-01_02-05-10_e15_s49`
+- [2026-10-01 02:19:28] [fb] E15 s49: held-out 63.6, flat 82.0 (speed 4.88), ho-fall 21%, boxes μ0.2 multiply 44.9 (fall 34%)
+- [2026-10-01 02:19:28] **F3a seed 47 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_01-36-33_e15_s47/model_999.pt`
+- [2026-10-01 02:29:27] F3a seed 47 result: held-out 67.0, seen 60.5, flat 81.9 (fall 9%, len 926), boxes±10 64.2, held-out fall 19%, flat speed 5.17 | std 0.450, lr 5.77e-04 | `logs/rsl_rl/ant/2026-10-01_02-19-33_f3a_s47`
+- [2026-10-01 02:29:44] [fb] F3a s47: held-out 67.0, flat 81.9 (speed 5.17), ho-fall 19%, boxes μ0.2 multiply 37.3 (fall 45%)
+- [2026-10-01 02:29:44] **F3a seed 48 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_01-50-45_e15_s48/model_999.pt`
+- [2026-10-01 02:39:38] F3a seed 48 result: held-out 70.2, seen 63.9, flat 87.1 (fall 6%, len 926), boxes±10 66.9, held-out fall 16%, flat speed 5.30 | std 0.397, lr 5.77e-04 | `logs/rsl_rl/ant/2026-10-01_02-29-48_f3a_s48`
+- [2026-10-01 02:39:54] [fb] F3a s48: held-out 70.2, flat 87.1 (speed 5.30), ho-fall 16%, boxes μ0.2 multiply 41.5 (fall 34%)
+- [2026-10-01 02:39:54] **F3a seed 49 start** | task Isaac-Ant-R2-Oracle-v0 | overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_02-05-10_e15_s49/model_999.pt`
+- [2026-10-01 02:50:10] F3a seed 49 result: held-out 70.7, seen 61.7, flat 85.0 (fall 7%, len 924), boxes±10 65.5, held-out fall 15%, flat speed 5.17 | std 0.422, lr 2.56e-04 | `logs/rsl_rl/ant/2026-10-01_02-39-58_f3a_s49`
+- [2026-10-01 02:50:25] [fb] F3a s49: held-out 70.7, flat 85.0 (speed 5.17), ho-fall 15%, boxes μ0.2 multiply 45.0 (fall 34%)
+- [2026-10-01 02:50:25] [fb] confirm F3a vs E15 (s47–49): held-out diff +8.4 [95% CI +3.2, +13.7], wins 3/3, flat ok True → cond1 True, cond2 True
+- [2026-10-01 02:51:33] [fb] LOCKBOX F3a s47 (reused lockbox, 3rd model): [77.3, 70.6, 76.0, 38.9] → mean 65.7 (need ≥ 52.2) → REPLACE E15
+- [2026-10-01 02:51:33] [fb] NEW SUBMISSION CANDIDATE: F3a `logs/rsl_rl/ant/2026-10-01_02-19-33_f3a_s47/model_599.pt` (play task Isaac-Ant-R2-Oracle-Play-v0); smoke tests follow
+- [2026-10-01 02:51:48] [fb] smoke F3a flat_f1.0_average: OK
+- [2026-10-01 02:52:03] [fb] smoke F3a flat_f1.0_multiply: OK
+- [2026-10-01 02:52:15] [fb] smoke F3a flat_f0.2_average: OK
+- [2026-10-01 02:52:28] [fb] smoke F3a flat_f0.2_multiply: OK
+- [2026-10-01 02:52:47] [fb] smoke F3a boxes_mid_f1.0_average: OK
+- [2026-10-01 02:53:06] [fb] smoke F3a boxes_mid_f1.0_multiply: OK
+- [2026-10-01 02:53:22] [fb] smoke F3a boxes_mid_f0.2_average: OK
+- [2026-10-01 02:53:37] [fb] smoke F3a boxes_mid_f0.2_multiply: OK
+- [2026-10-01 02:53:52] [fb] smoke F3a official play_one_episode: exit 0
+- [2026-10-01 02:53:52] [fb] ## batch 5 done
+- [2026-10-01 02:54:41] [fb] ## batch 6 start (G1 energy −0.02 training-only on E15, G2 conditional E22 entropy)
+- [2026-10-01 02:54:41] [fb] G2 skipped: no E22 entropy value beat 0.005 by ≥ 3 (pre-registered condition)
+- [2026-10-01 02:54:41] [fb] **G1 seed 42 start** | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | score overrides ['agent.algorithm.entropy_coef=0.005']
+- [2026-10-01 02:57:19] [fb] ## batch 7 start (one change on top of submission F3a, same 1000+600 it budget)
+- [2026-10-01 02:57:19] [fb] F3a s42/43 reference: held-out 67.3, flat 85.6, boxes μ0.2 multiply 33.5
+- [2026-10-01 02:57:19] [fb] **h1_s42 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_23-39-28_f1_s42/model_999.pt`
+- [2026-10-01 02:57:31] [fb] h1_s42 FAILED (see experiments/train_logs/h1_s42.log)
+- [2026-10-01 02:57:31] [fb] **h1_s43 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_23-53-33_f1_s43/model_999.pt`
+- [2026-10-01 02:58:11] [fb] ## batch 7 start (one change on top of submission F3a, same 1000+600 it budget)
+- [2026-10-01 02:58:11] [fb] F3a s42/43 reference: held-out 67.3, flat 85.6, boxes μ0.2 multiply 33.5
+- [2026-10-01 03:04:41] [fb] **h1_s42 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_23-39-28_f1_s42/model_999.pt`
+- [2026-10-01 03:15:09] [fb] H1 s42: held-out 61.7, flat 79.9 (speed 4.69), ho-fall 19%, boxes μ0.2 multiply 67.6 (fall 13%) | std 0.396, lr 5.77e-04
+- [2026-10-01 03:15:09] [fb] **h1_s43 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_23-53-33_f1_s43/model_999.pt`
+- [2026-10-01 03:25:55] [fb] H1 s43: held-out 67.9, flat 85.5 (speed 5.13), ho-fall 15%, boxes μ0.2 multiply 67.9 (fall 5%) | std 0.414, lr 5.77e-04
+- [2026-10-01 03:25:55] [fb] **h2_s42 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_02-54-45_g1_s42/model_999.pt`
+- [2026-10-01 03:36:43] [fb] H2 s42: held-out 71.7, flat 96.6 (speed 6.38), ho-fall 11%, boxes μ0.2 multiply 37.4 (fall 35%) | std 0.595, lr 5.77e-04
+- [2026-10-01 03:36:43] [fb] **g1_s43 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-10-01 03:46:26] [fb] **h2_s43 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_03-36-47_g1_s43/model_999.pt`
+- [2026-10-01 03:56:44] [fb] H2 s43: held-out 73.5, flat 95.5 (speed 6.37), ho-fall 12%, boxes μ0.2 multiply 34.6 (fall 27%) | std 0.558, lr 5.77e-04
+- [2026-10-01 03:56:44] [fb] screen H1: held-out 64.8 vs 67.3, flat 82.7 vs 85.6, μ0.2 multiply 67.8 vs 33.5 → fail
+- [2026-10-01 03:56:44] [fb] screen H2: held-out 72.6 vs 67.3, flat 96.0 vs 85.6, μ0.2 multiply 36.0 vs 33.5 → PASS
+- [2026-10-01 03:56:44] [fb] batch 7 screening passed: ['H2']
+- [2026-10-01 03:56:44] [fb] **g1_s47 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-10-01 04:06:26] [fb] **h2_s47 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_03-56-48_g1_s47/model_999.pt`
+- [2026-10-01 04:17:00] [fb] H2 s47: held-out 67.9, flat 90.6 (speed 6.22), ho-fall 17%, boxes μ0.2 multiply 41.4 (fall 26%) | std 0.567, lr 5.77e-04
+- [2026-10-01 04:17:00] [fb] **g1_s48 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-10-01 04:26:43] [fb] **h2_s48 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_04-17-04_g1_s48/model_999.pt`
+- [2026-10-01 04:37:20] [fb] H2 s48: held-out 71.2, flat 83.6 (speed 5.96), ho-fall 16%, boxes μ0.2 multiply 34.2 (fall 41%) | std 0.527, lr 1.14e-04
+- [2026-10-01 04:37:20] [fb] **g1_s49 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 1000 it
+- [2026-10-01 04:47:01] [fb] **h2_s49 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'env.rewards.energy.weight=-0.02'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_04-37-24_g1_s49/model_999.pt`
+- [2026-10-01 04:57:31] [fb] H2 s49: held-out 63.9, flat 75.3 (speed 6.06), ho-fall 23%, boxes μ0.2 multiply 39.5 (fall 27%) | std 0.604, lr 3.84e-04
+- [2026-10-01 04:57:31] [fb] confirm H2 vs F3a (s47–49): held-out diff -1.7 [95% CI -12.6, +9.3], wins 2/3, flat 83.2 vs 84.7, μ0.2 multiply 38.4 vs 41.3
+- [2026-10-01 04:57:31] [fb] confirm H2: replacement conditions not met → keep F3a
+- [2026-10-01 04:57:31] [fb] ## batch 7 done
+- [2026-10-01 04:59:04] [fb] ## batch 8 start (K1 = F3a + 600 it, total 2200 it)
+- [2026-10-01 04:59:04] [fb] **k1_s42 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_00-07-43_f3a_s42/model_599.pt`
+- [2026-10-01 05:09:38] [fb] K1 s42: held-out 65.3, flat 85.0 (speed 5.54), ho-fall 25%, boxes μ0.2 multiply 28.1 | std 0.467, lr 5.77e-04
+- [2026-10-01 05:09:38] [fb] **k1_s43 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_00-18-07_f3a_s43/model_599.pt`
+- [2026-10-01 05:20:31] [fb] K1 s43: held-out 72.9, flat 91.4 (speed 5.54), ho-fall 15%, boxes μ0.2 multiply 43.7 | std 0.420, lr 2.56e-04
+- [2026-10-01 05:20:31] [fb] screen K1: held-out 69.1 vs F3a 67.3, flat 88.2 vs 85.6 → fail
+- [2026-10-01 05:20:31] [fb] final submission after batch 8: F3a `logs/rsl_rl/ant/2026-10-01_02-19-33_f3a_s47/model_599.pt`
+- [2026-10-01 05:21:21] [fb] video F3a flat: OK
+- [2026-10-01 05:22:13] [fb] video F3a boxes_mid: OK
+- [2026-10-01 05:23:04] [fb] video F3a ho_obstacles: OK
+- [2026-10-01 05:23:57] [fb] video F3a stairs: OK
+- [2026-10-01 05:23:57] [fb] ## batch 8 done
+- [2026-10-01 05:24:59] [fb] ## batch 9 start (reporting only: F3a s44-46, post-hoc lockbox for all seeds)
+- [2026-10-01 05:24:59] [fb] **f3a_s44 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_18-52-10_e15_s44/model_999.pt`
+- [2026-10-01 05:35:45] [fb] F3a s44: held-out 59.2, flat 72.9 (speed 4.91), ho-fall 30%, boxes μ0.2 multiply 31.8
+- [2026-10-01 05:35:45] [fb] **f3a_s45 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_19-06-23_e15_s45/model_999.pt`
+- [2026-10-01 05:46:14] [fb] F3a s45: held-out 66.3, flat 84.7 (speed 5.34), ho-fall 17%, boxes μ0.2 multiply 37.0
+- [2026-10-01 05:46:14] [fb] **f3a_s46 start** | train_finetune.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-09-30_19-21-11_e15_s46/model_999.pt`
+- [2026-10-01 05:57:16] [fb] F3a s46: held-out 67.6, flat 83.0 (speed 5.15), ho-fall 23%, boxes μ0.2 multiply 33.4
+- [2026-10-01 05:58:27] [fb] posthoc lockbox e4_relheight_s42: rails 58.7, gaps 50.9, pits 57.7, stones 20.4 → mean 46.9
+- [2026-10-01 05:59:42] [fb] posthoc lockbox e4_relheight_s43: rails 60.3, gaps 58.7, pits 63.1, stones 25.2 → mean 51.8
+- [2026-10-01 06:00:41] [fb] posthoc lockbox e4_relheight_s44: rails 57.2, gaps 58.4, pits 63.9, stones 24.2 → mean 50.9
+- [2026-10-01 06:01:46] [fb] posthoc lockbox e4_relheight_s45: rails 55.2, gaps 55.9, pits 54.0, stones 24.3 → mean 47.3
+- [2026-10-01 06:02:55] [fb] posthoc lockbox e4_relheight_s46: rails 45.4, gaps 39.5, pits 45.8, stones 22.6 → mean 38.3
+- [2026-10-01 06:02:55] [fb] posthoc lockbox E4: 47.1 ± 5.3 (n=5)
+- [2026-10-01 06:04:01] [fb] posthoc lockbox e15_s42: rails 69.8, gaps 63.9, pits 68.1, stones 38.5 → mean 60.1
+- [2026-10-01 06:05:06] [fb] posthoc lockbox e15_s43: rails 73.4, gaps 65.7, pits 76.5, stones 39.2 → mean 63.7
+- [2026-10-01 06:06:18] [fb] posthoc lockbox e15_s44: rails 66.6, gaps 52.6, pits 67.9, stones 33.8 → mean 55.2
+- [2026-10-01 06:07:19] [fb] posthoc lockbox e15_s45: rails 72.5, gaps 65.3, pits 72.3, stones 37.3 → mean 61.9
+- [2026-10-01 06:08:29] [fb] posthoc lockbox e15_s46: rails 76.7, gaps 58.0, pits 77.6, stones 43.3 → mean 63.9
+- [2026-10-01 06:10:03] [fb] posthoc lockbox e15_s47: rails 63.4, gaps 63.3, pits 65.5, stones 28.5 → mean 55.2
+- [2026-10-01 06:11:14] [fb] posthoc lockbox e15_s48: rails 75.1, gaps 67.2, pits 73.2, stones 42.9 → mean 64.6
+- [2026-10-01 06:12:22] [fb] posthoc lockbox e15_s49: rails 76.2, gaps 65.5, pits 78.8, stones 34.0 → mean 63.7
+- [2026-10-01 06:12:22] [fb] posthoc lockbox E15: 61.0 ± 3.9 (n=8)
+- [2026-10-01 06:13:29] [fb] posthoc lockbox f3a_s42: rails 75.8, gaps 66.4, pits 76.1, stones 37.3 → mean 63.9
+- [2026-10-01 06:14:37] [fb] posthoc lockbox f3a_s43: rails 85.5, gaps 67.9, pits 85.8, stones 41.2 → mean 70.1
+- [2026-10-01 06:15:45] [fb] posthoc lockbox f3a_s44: rails 72.0, gaps 63.1, pits 72.7, stones 41.9 → mean 62.4
+- [2026-10-01 06:16:45] [fb] posthoc lockbox f3a_s45: rails 74.6, gaps 61.2, pits 75.0, stones 43.8 → mean 63.6
+- [2026-10-01 06:17:46] [fb] posthoc lockbox f3a_s46: rails 79.7, gaps 69.7, pits 78.7, stones 41.8 → mean 67.5
+- [2026-10-01 06:18:49] [fb] posthoc lockbox f3a_s47: rails 77.3, gaps 70.6, pits 76.0, stones 38.9 → mean 65.7
+- [2026-10-01 06:19:51] [fb] posthoc lockbox f3a_s48: rails 78.6, gaps 67.1, pits 78.2, stones 40.9 → mean 66.2
+- [2026-10-01 06:20:56] [fb] posthoc lockbox f3a_s49: rails 77.3, gaps 63.3, pits 80.0, stones 40.9 → mean 65.4
+- [2026-10-01 06:20:56] [fb] posthoc lockbox F3a: 65.6 ± 2.4 (n=8)
+- [2026-10-01 06:20:56] [fb] ## batch 9 done

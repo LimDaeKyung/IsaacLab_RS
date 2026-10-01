@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-09-30_23-05-17_t1_teacher_s42/model_999.pt",
+  "task": "Isaac-Ant-R4-Teacher-Play-v0",
+  "terrain": "boxes_high",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 29.28708267211914,
+  "return_std": 15.067867279052734,
+  "return_min": -0.6679418087005615,
+  "return_median": 31.07723045349121,
+  "episode_length_mean": 701.280029296875,
+  "fall_rate": 0.5099999904632568,
+  "upside_down_at_end_rate": 0.11999999731779099,
+  "distance_x_mean": 28.717649459838867,
+  "distance_x_max": 52.04273986816406,
+  "speed_x_mean": 2.377697229385376
+}
