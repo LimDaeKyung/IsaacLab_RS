@@ -709,3 +709,15 @@
 - [2026-10-02 19:49:49] [fb] [b22] curve FP35 (-35/fall): unseen9 83.6, unseen fall 27%, flat fall 25%, flat speed 9.45, μ0.2 mult 12.8
 - [2026-10-02 19:49:49] [fb] [b22] curve FP50 (-50/fall): unseen9 55.9, unseen fall 37%, flat fall 40%, flat speed 8.56, μ0.2 mult -6.0
 - [2026-10-02 19:49:49] [fb] [b22] ## batch 22 done
+- [2026-10-02 19:58:22] [fb] [b23] ## batch 23 start (descriptive: C60 on s47-49 vs FP20)
+- [2026-10-02 19:58:22] [fb] **c60_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-11-14_sp50_s47/model_999.pt`
+- [2026-10-02 20:09:03] [fb] **c60_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-28-56_sp50_s48/model_999.pt`
+- [2026-10-02 20:19:49] [fb] **c60_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-46-43_sp50_s49/model_999.pt`
+- [2026-10-02 20:53:12] [fb] [b23] c60_s47: unseen9 118.8, unseen fall 49%, flat fall 46%, μ0.2 mult 23.0, official 140.8
+- [2026-10-02 20:53:29] [fb] [b23] c60_s48: unseen9 112.8, unseen fall 52%, flat fall 50%, μ0.2 mult 20.0, official 124.2
+- [2026-10-02 20:53:46] [fb] [b23] c60_s49: unseen9 116.8, unseen fall 45%, flat fall 32%, μ0.2 mult 28.0, official 123.2
+- [2026-10-02 20:53:46] [fb] [b23] fp20_s47: unseen9 104.1, unseen fall 28%, flat fall 28%, μ0.2 mult 26.9, official 117.1
+- [2026-10-02 20:54:05] [fb] [b23] fp20_s48: unseen9 104.7, unseen fall 30%, flat fall 32%, μ0.2 mult 21.9, official 110.8
+- [2026-10-02 20:54:05] [fb] [b23] fp20_s49: unseen9 113.2, unseen fall 24%, flat fall 27%, μ0.2 mult 17.9, official 127.9
+- [2026-10-02 20:54:05] [fb] [b23] C60 − FP20 (s47–49): unseen9 +8.8 (+14.6, +8.1, +3.6), unseen fall +21 points
+- [2026-10-02 20:54:05] [fb] [b23] ## batch 23 done
