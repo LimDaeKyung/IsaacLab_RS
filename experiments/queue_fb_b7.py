@@ -41,7 +41,7 @@ def wait_for_run(run_name):
 
 
 def gpu_training_busy():
-    return subprocess.run(["pgrep", "-f", r"rsl_rl/(train|train_finetune)\.py"], stdout=subprocess.DEVNULL).returncode == 0
+    return subprocess.run(["pgrep", "-f", r"^\S*/python3? scripts/reinforcement_learning/rsl_rl/(train|train_finetune)\.py"], stdout=subprocess.DEVNULL).returncode == 0
 
 
 def train(run_name, task, seed, train_over, iters, init=None):

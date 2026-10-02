@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/docs/assignment1/models/e4_mixed_relheight_s42.pt",
+  "task": "Isaac-Ant-Rough-E4-Play-v0",
+  "terrain": "lock7_pyramids_high",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 32.68992233276367,
+  "return_std": 19.827028274536133,
+  "return_min": -0.7355223894119263,
+  "return_median": 34.195716857910156,
+  "episode_length_mean": 598.9299926757812,
+  "fall_rate": 0.7299999594688416,
+  "upside_down_at_end_rate": 0.7400000095367432,
+  "distance_x_mean": 31.2529296875,
+  "distance_x_max": 61.02374267578125,
+  "speed_x_mean": 2.8384246826171875
+}

@@ -1,0 +1,23 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-10-01_22-47-51_ls_s43/model_1599.pt",
+  "task": "Isaac-Ant-R6-OracleLSTM-Play-v0",
+  "terrain": "flat",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 81.63390350341797,
+  "return_std": 8.559053421020508,
+  "return_min": -0.04140663519501686,
+  "return_median": 82.45237731933594,
+  "episode_length_mean": 951.0999755859375,
+  "fall_rate": 0.009999999776482582,
+  "upside_down_at_end_rate": 0.009999999776482582,
+  "distance_x_mean": 77.31777954101562,
+  "distance_x_max": 83.09673309326172,
+  "speed_x_mean": 4.830702304840088
+}

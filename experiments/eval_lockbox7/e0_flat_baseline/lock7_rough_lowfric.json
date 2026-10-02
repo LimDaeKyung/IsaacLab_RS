@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/docs/assignment1/models/e0_flat_baseline.pt",
+  "task": "Isaac-Ant-E0-Play-v0",
+  "terrain": "lock7_rough_lowfric",
+  "friction": 0.4,
+  "terrain_seed": 0,
+  "combine_mode": "multiply",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 16.00713348388672,
+  "return_std": 8.049189567565918,
+  "return_min": -2.0444700717926025,
+  "return_median": 17.307144165039062,
+  "episode_length_mean": 829.3300170898438,
+  "fall_rate": 0.3100000023841858,
+  "upside_down_at_end_rate": 0.28999999165534973,
+  "distance_x_mean": 14.557842254638672,
+  "distance_x_max": 32.6736946105957,
+  "speed_x_mean": 1.069230318069458
+}

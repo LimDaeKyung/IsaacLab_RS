@@ -106,8 +106,74 @@ def fig_terrains():
     fig.savefig(f"{OUT}/unseen_terrains.png", dpi=150)
 
 
+def fig_lineage():
+    """Every stage on lockbox 7 (fixed 10-02 12:08, used by no decision; experiments/queue_fb_b21.py)."""
+    rows = json.load(open("experiments/eval_lockbox7/lineage.json"))
+    labels = {"E0": "E0\n평지 원본", "E4": "E4\n발밑 기준", "E15": "E15\n박스+탐색", "F3a": "F3a\n+600 it",
+              "M30": "M30\n전 지형", "AXF40": "AXF40\n높이 연속", "SP50": "SP50\n빠른 걸음",
+              "FP20": "FP20 s47\n넘어짐 벌점", "FP20_s49": "FP20 s49\n(최종)"}
+    names = list(labels)
+    panels = [("봉인 시험장 7 점수 (4종 평균)", "lockbox7", 1, "{:.1f}", 140),
+              ("봉인 시험장 7 넘어짐 비율", "fall", 100, "{:.0f}%", 100)]
+    fig, axes = plt.subplots(1, 2, figsize=(14, 4.4))
+    for ax, (title, key, scale, fmt, top) in zip(axes, panels):
+        style(ax)
+        for i, n in enumerate(names):
+            v = rows[n][key] * scale
+            color = FINAL if n == "FP20_s49" else CONTEXT
+            ax.bar(i, v, width=0.62, color=color, zorder=2)
+            ax.text(i, v + top * 0.015, fmt.format(v), ha="center", va="bottom", fontsize=9,
+                    fontweight="bold" if color == FINAL else "normal")
+        ax.set_xticks(range(len(names)), [labels[n] for n in names], fontsize=8)
+        ax.set_title(title, fontsize=12, loc="left")
+        ax.set_ylim(0, top)
+    axes[0].set_ylabel("에피소드 리턴 (100 envs 평균)")
+    fig.suptitle("단계별 모델을 같은 처음 보는 지형에서 비교 (넓은 틈 35 cm, 피라미드 15 cm, 짧은 물결, 저마찰 요철; 각 모델의 대표 seed 1개)",
+                 fontsize=11, x=0.01, ha="left", color=INK2)
+    fig.tight_layout()
+    fig.savefig(f"{OUT}/lineage_lockbox7.png", dpi=150)
+
+
+def fig_penalty():
+    """Training-only fall penalty sweep from SP50 s42/43, +1000 it each (batches 17 and 22)."""
+    curve = [("c60", 0), ("fp10", -10), ("fp20", -20), ("fp35", -35), ("fp50", -50)]
+    score, fall = [], []
+    for prefix, _ in curve:
+        s_vals, f_vals = [], []
+        for s in (42, 43):
+            u = load(f"experiments/eval_unseen8/{prefix}_s{s}")
+            mult = json.load(open(f"experiments/eval/{prefix}_s{s}/boxes_mid_f0.2_multiply.json"))["return_mean"]
+            s_vals.append(st.mean([r["return_mean"] for r in u.values()] + [mult]))
+            f_vals.append(100 * st.mean(r["fall_rate"] for r in u.values()))
+        score.append(st.mean(s_vals))
+        fall.append(st.mean(f_vals))
+    xs = [p for _, p in curve]
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.0))
+    for ax, ys, title, fmt, top in ((axes[0], score, "처음 보는 지형 점수 (unseen9)", "{:.0f}", 140),
+                                    (axes[1], fall, "처음 보는 지형 넘어짐 비율", "{:.0f}%", 60)):
+        style(ax)
+        ax.plot(xs, ys, color=CONTEXT, linewidth=2, zorder=2)
+        for x, y in zip(xs, ys):
+            final = x == -20
+            ax.plot(x, y, "o", markersize=9 if final else 7, color=FINAL if final else CONTEXT, zorder=3,
+                    markeredgecolor=SURFACE, markeredgewidth=2)
+            ax.text(x, y + top * 0.04, fmt.format(y), ha="center", va="bottom", fontsize=10,
+                    fontweight="bold" if final else "normal")
+        ax.set_xticks(xs, [f"{x}" for x in xs])
+        ax.set_xlabel("학습 전용 넘어짐 벌점 (넘어질 때마다, 점)")
+        ax.set_title(title, fontsize=12, loc="left")
+        ax.set_ylim(0, top)
+        ax.invert_xaxis()
+    fig.suptitle("넘어짐 벌점 크기에 따른 변화: SP50에서 +1,000 it, seed 42·43 평균 (−20 = 최종 FP20)",
+                 fontsize=11, x=0.01, ha="left", color=INK2)
+    fig.tight_layout()
+    fig.savefig(f"{OUT}/penalty_sweep.png", dpi=150)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     fig_progression()
     fig_terrains()
+    fig_lineage()
+    fig_penalty()
     print("saved", os.listdir(OUT))

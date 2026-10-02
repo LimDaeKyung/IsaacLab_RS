@@ -1,0 +1,23 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/docs/assignment1/models/fp20_final_s49.pt",
+  "task": "Isaac-Ant-R5-AllMix-Play-v0",
+  "terrain": "flat",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 4,
+  "return_mean": 148.61471557617188,
+  "return_std": 27.907339096069336,
+  "return_min": 121.76996612548828,
+  "return_median": 125.9678955078125,
+  "episode_length_mean": 899.0,
+  "fall_rate": 0.25,
+  "upside_down_at_end_rate": 0.5,
+  "distance_x_mean": 182.2289276123047,
+  "distance_x_max": 237.4639434814453,
+  "speed_x_mean": 12.144014358520508
+}

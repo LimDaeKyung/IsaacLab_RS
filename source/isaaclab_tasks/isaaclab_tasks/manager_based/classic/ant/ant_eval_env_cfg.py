@@ -145,8 +145,124 @@ EVAL_TERRAINS = {
 """Named terrain presets. ``flat`` keeps the original plane; ``ho_*`` are held out from training."""
 
 
+# Lockbox 3 (fixed 2026-10-01 15:20, before any batch-11 result): harder parameter variants of known shapes, never
+# trained on and never used for selection. Evaluated once per model at the very end of batch 11 (final check).
+LOCKBOX3_TERRAINS = {
+    "lock3_obstacles_high": _obstacles(0.15),
+    "lock3_wave_big": _wave(0.25),
+    "lock3_rails_high": terrain_gen.MeshRailsTerrainCfg(
+        proportion=1.0, rail_thickness_range=(0.2, 0.2), rail_height_range=(0.12, 0.12), platform_width=2.0
+    ),
+    "lock3_pits_deep": terrain_gen.MeshPitTerrainCfg(proportion=1.0, pit_depth_range=(0.25, 0.25), platform_width=3.0),
+}
+
+
+# Lockbox 4 (fixed 2026-10-01 21:00, before any batch-12 result): final check for batch 12. lock4_wave_lowfric is
+# evaluated with ground friction 0.3 and multiply combine (passed on the evaluate.py command line).
+LOCKBOX4_TERRAINS = {
+    "lock4_stones_hard": terrain_gen.HfSteppingStonesTerrainCfg(
+        proportion=1.0,
+        stone_height_max=0.03,
+        stone_width_range=(0.7, 1.0),
+        stone_distance_range=(0.10, 0.15),
+        holes_depth=-0.3,
+        platform_width=2.0,
+        border_width=0.25,
+    ),
+    "lock4_cylinders_tall": terrain_gen.MeshRepeatedCylindersTerrainCfg(
+        proportion=1.0,
+        platform_width=2.0,
+        object_params_start=terrain_gen.MeshRepeatedCylindersTerrainCfg.ObjectCfg(num_objects=40, height=0.15, radius=0.10),
+        object_params_end=terrain_gen.MeshRepeatedCylindersTerrainCfg.ObjectCfg(num_objects=40, height=0.15, radius=0.10),
+    ),
+    "lock4_boxes_fine12": terrain_gen.MeshRandomGridTerrainCfg(
+        proportion=1.0, grid_width=0.35, grid_height_range=(0.12, 0.12), platform_width=2.0
+    ),
+    "lock4_wave_lowfric": _wave(0.15),
+}
+
+
+# Lockbox 5 (fixed 2026-10-02 00:30, before any batch-13 result). lock5_boxes_lowfric is evaluated with ground
+# friction 0.3 and multiply combine (passed on the evaluate.py command line).
+LOCKBOX5_TERRAINS = {
+    "lock5_stairs_high": terrain_gen.MeshPyramidStairsTerrainCfg(
+        proportion=1.0, step_height_range=(0.15, 0.15), step_width=0.3, platform_width=3.0, border_width=1.0
+    ),
+    "lock5_slope_steep": terrain_gen.HfPyramidSlopedTerrainCfg(
+        proportion=1.0, slope_range=(0.35, 0.35), platform_width=2.0, border_width=0.25
+    ),
+    "lock5_cones_dense": terrain_gen.MeshRepeatedPyramidsTerrainCfg(
+        proportion=1.0,
+        platform_width=2.0,
+        object_params_start=terrain_gen.MeshRepeatedPyramidsTerrainCfg.ObjectCfg(num_objects=50, height=0.10, radius=0.25),
+        object_params_end=terrain_gen.MeshRepeatedPyramidsTerrainCfg.ObjectCfg(num_objects=50, height=0.10, radius=0.25),
+    ),
+    "lock5_boxes_lowfric": _boxes(0.08),
+}
+
+
+# Lockbox 6 (fixed 2026-10-02 08:12, before any lockbox-5 result and before batch 16): final check for batch 16.
+# Downward shapes (inverted stairs / slope) and box obstacles were never trained on or evaluated before.
+# lock6_boxobst_midfric is evaluated with ground friction 0.5 and average combine (passed on the command line).
+_BOX6 = terrain_gen.MeshRepeatedBoxesTerrainCfg.ObjectCfg(num_objects=40, height=0.12, size=(0.4, 0.4), max_yx_angle=15.0)
+LOCKBOX6_TERRAINS = {
+    "lock6_stairs_down": terrain_gen.MeshInvertedPyramidStairsTerrainCfg(
+        proportion=1.0, step_height_range=(0.10, 0.10), step_width=0.3, platform_width=3.0, border_width=1.0
+    ),
+    "lock6_slope_down": terrain_gen.HfInvertedPyramidSlopedTerrainCfg(
+        proportion=1.0, slope_range=(0.25, 0.25), platform_width=2.0, border_width=0.25
+    ),
+    "lock6_rough_heavy": terrain_gen.HfRandomUniformTerrainCfg(
+        proportion=1.0, noise_range=(0.0, 0.15), noise_step=0.01, border_width=0.25
+    ),
+    "lock6_boxobst_midfric": terrain_gen.MeshRepeatedBoxesTerrainCfg(
+        proportion=1.0, platform_width=2.0, object_params_start=_BOX6, object_params_end=_BOX6
+    ),
+}
+
+
+# Lockbox 7 (fixed 2026-10-02 12:08, before any lockbox-6 result and before batch 18): final check for batch 18.
+# lock7_rough_lowfric is evaluated with ground friction 0.4 and multiply combine (passed on the command line).
+_PYR7 = terrain_gen.MeshRepeatedPyramidsTerrainCfg.ObjectCfg(num_objects=20, height=0.15, radius=0.4)
+LOCKBOX7_TERRAINS = {
+    "lock7_gaps_wide": terrain_gen.MeshGapTerrainCfg(proportion=1.0, gap_width_range=(0.35, 0.35), platform_width=3.0),
+    "lock7_pyramids_high": terrain_gen.MeshRepeatedPyramidsTerrainCfg(
+        proportion=1.0, platform_width=2.0, object_params_start=_PYR7, object_params_end=_PYR7
+    ),
+    "lock7_wave_short": terrain_gen.HfWaveTerrainCfg(
+        proportion=1.0, amplitude_range=(0.12, 0.12), num_waves=8, border_width=0.25
+    ),
+    "lock7_rough_lowfric": terrain_gen.HfRandomUniformTerrainCfg(
+        proportion=1.0, noise_range=(0.0, 0.08), noise_step=0.01, border_width=0.25
+    ),
+}
+
+
+# Lockbox 8 (fixed 2026-10-02 14:12, before any lockbox-7 result and before batch 19): final check for batch 19 if
+# lockbox 7 is used by batch 18. lock8_slope_lowfric is evaluated with ground friction 0.5 and multiply combine.
+_BOX8 = terrain_gen.MeshRepeatedBoxesTerrainCfg.ObjectCfg(num_objects=25, height=0.36,  # half is buried: 18 cm visible
+                                                            size=(0.6, 0.6), max_yx_angle=0.0)
+LOCKBOX8_TERRAINS = {
+    "lock8_boxes_tall_sparse": terrain_gen.MeshRepeatedBoxesTerrainCfg(
+        proportion=1.0, platform_width=2.0, object_params_start=_BOX8, object_params_end=_BOX8
+    ),
+    "lock8_stairs_down_hf": terrain_gen.HfInvertedPyramidStairsTerrainCfg(
+        proportion=1.0, step_height_range=(0.13, 0.13), step_width=0.4, platform_width=3.0, border_width=1.0
+    ),
+    "lock8_stones_wide": terrain_gen.HfSteppingStonesTerrainCfg(
+        proportion=1.0, stone_height_max=0.03, stone_width_range=(1.0, 1.4), stone_distance_range=(0.15, 0.25),
+        holes_depth=-0.3, platform_width=2.0, border_width=0.25,
+    ),
+    "lock8_slope_lowfric": terrain_gen.HfPyramidSlopedTerrainCfg(
+        proportion=1.0, slope_range=(0.20, 0.20), platform_width=2.0, border_width=0.25
+    ),
+}
+
+
 def _all_terrains():
-    return {**EVAL_TERRAINS, **LOCKBOX_TERRAINS, **LOCKBOX2_TERRAINS}
+    return {**EVAL_TERRAINS, **LOCKBOX_TERRAINS, **LOCKBOX2_TERRAINS, **LOCKBOX3_TERRAINS, **LOCKBOX4_TERRAINS,
+            **LOCKBOX5_TERRAINS, **LOCKBOX6_TERRAINS,
+            **LOCKBOX7_TERRAINS, **LOCKBOX8_TERRAINS}
 
 
 def apply_eval_terrain(

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/docs/assignment1/models/e15_boxes_entropy_s44.pt",
+  "task": "Isaac-Ant-R2-Oracle-Play-v0",
+  "terrain": "lock7_wave_short",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 48.2973747253418,
+  "return_std": 20.18570899963379,
+  "return_min": 2.5723366737365723,
+  "return_median": 55.72077941894531,
+  "episode_length_mean": 768.02001953125,
+  "fall_rate": 0.3999999761581421,
+  "upside_down_at_end_rate": 0.3999999761581421,
+  "distance_x_mean": 47.99238586425781,
+  "distance_x_max": 70.33027648925781,
+  "speed_x_mean": 3.6279168128967285
+}

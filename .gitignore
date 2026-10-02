@@ -43,3 +43,8 @@ logs/rsl_rl/**/exported/
 !logs/rsl_rl/ant/2026-10-01_05-25-04_f3a_s44/model_599.pt
 !logs/rsl_rl/ant/2026-10-01_05-35-49_f3a_s45/model_599.pt
 !logs/rsl_rl/ant/2026-10-01_05-46-18_f3a_s46/model_599.pt
+# smoke runs (2 iterations, config checks only) and scratch video folders (2026-10-02)
+logs/rsl_rl/ant/*_smoke_*/
+experiments/videos_sp50/*.json
+experiments/videos_fp20/
+docs/assignment1/models/exported/

@@ -363,3 +363,349 @@
 - [2026-10-01 06:20:56] [fb] posthoc lockbox f3a_s49: rails 77.3, gaps 63.3, pits 80.0, stones 40.9 → mean 65.4
 - [2026-10-01 06:20:56] [fb] posthoc lockbox F3a: 65.6 ± 2.4 (n=8)
 - [2026-10-01 06:20:56] [fb] ## batch 9 done
+- [2026-10-01 15:03:01] [fb] [b10] ## batch 10 start (AllMix: train on every EVAL_TERRAINS type; test = lockbox 1 + 2)
+- [2026-10-01 15:03:28] smoke b10_allmix (Isaac-Ant-R5-AllMix-v0): OK
+- [2026-10-01 15:05:39] [fb] [b10] E0 on lockbox 2 (sanity, not used for selection): lock2_cylinders 28.3, lock2_cones 18.9, lock2_tilted_blocks 22.5, lock2_platform 12.3
+- [2026-10-01 15:10:21] [fb] [b10] F3a s42: unseen8 63.1 (lock1 63.9, lock2 62.4), held-out(now trained) 63.4, flat 80.0 (speed 5.13)
+- [2026-10-01 15:10:21] [fb] [b10] F3a s43: unseen8 70.2 (lock1 70.1, lock2 70.3), held-out(now trained) 71.1, flat 91.2 (speed 5.53)
+- [2026-10-01 15:10:21] [fb] m16_s42 skipped: would start after 08:00 or end too late
+- [2026-10-01 15:10:21] [fb] m16_s43 skipped: would start after 08:00 or end too late
+- [2026-10-01 15:10:21] [fb] [b10] screen M16: incomplete
+- [2026-10-01 15:10:21] [fb] m30_s42 skipped: would start after 08:00 or end too late
+- [2026-10-01 15:10:21] [fb] m30_s43 skipped: would start after 08:00 or end too late
+- [2026-10-01 15:10:21] [fb] [b10] screen M30: incomplete
+- [2026-10-01 15:10:21] [fb] [b10] ## batch 10 done: no candidate passed screening → keep F3a
+- [2026-10-01 15:11:01] [fb] [b10] ## batch 10 start (AllMix: train on every EVAL_TERRAINS type; test = lockbox 1 + 2)
+- [2026-10-01 15:11:14] smoke b10_allmix (Isaac-Ant-R5-AllMix-v0): OK
+- [2026-10-01 15:11:14] [fb] [b10] E0 on lockbox 2 (sanity, not used for selection): lock2_cylinders 28.3, lock2_cones 18.9, lock2_tilted_blocks 22.5, lock2_platform 12.3
+- [2026-10-01 15:11:14] [fb] [b10] F3a s42: unseen8 63.1 (lock1 63.9, lock2 62.4), held-out(now trained) 63.4, flat 80.0 (speed 5.13)
+- [2026-10-01 15:11:14] [fb] [b10] F3a s43: unseen8 70.2 (lock1 70.1, lock2 70.3), held-out(now trained) 71.1, flat 91.2 (speed 5.53)
+- [2026-10-01 15:11:14] [fb] **m16_s42 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1600 it
+- [2026-10-01 15:38:00] [fb] [b10] M16 s42: unseen8 65.2 (lock1 66.5, lock2 63.9), held-out(now trained) 64.7, flat 87.5 (speed 5.74)
+- [2026-10-01 15:38:00] [fb] **m16_s43 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1600 it
+- [2026-10-01 15:41:56] [fb] [b10] ## batch 10 start (AllMix: train on every EVAL_TERRAINS type; test = lockbox 1 + 2)
+- [2026-10-01 15:42:09] smoke b10_allmix (Isaac-Ant-R5-AllMix-v0): OK
+- [2026-10-01 15:42:09] [fb] [b10] E0 on lockbox 2 (sanity, not used for selection): lock2_cylinders 28.3, lock2_cones 18.9, lock2_tilted_blocks 22.5, lock2_platform 12.3
+- [2026-10-01 15:42:09] [fb] [b10] F3a s42: unseen8 63.1 (lock1 63.9, lock2 62.4), held-out(now trained) 63.4, flat 80.0 (speed 5.13)
+- [2026-10-01 15:42:09] [fb] [b10] F3a s43: unseen8 70.2 (lock1 70.1, lock2 70.3), held-out(now trained) 71.1, flat 91.2 (speed 5.53)
+- [2026-10-01 15:42:09] [fb] [b10] M16 s42: unseen8 65.2 (lock1 66.5, lock2 63.9), held-out(now trained) 64.7, flat 87.5 (speed 5.74)
+- [2026-10-01 15:42:09] [fb] **m16_s43 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1600 it
+- [2026-10-01 16:08:26] [fb] [b10] M16 s43: unseen8 67.9 (lock1 72.6, lock2 63.1), held-out(now trained) 63.9, flat 92.2 (speed 6.13)
+- [2026-10-01 16:08:26] [fb] [b10] screen M16: unseen8 66.5 vs F3a 66.7, flat 89.8 vs 85.6 → fail
+- [2026-10-01 16:08:26] [fb] **m30_s42 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-01 16:49:45] [fb] [b10] M30 s42: unseen8 68.5 (lock1 69.8, lock2 67.2), held-out(now trained) 66.5, flat 82.5 (speed 6.26)
+- [2026-10-01 16:49:45] [fb] **m30_s43 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-01 17:31:07] [fb] [b10] M30 s43: unseen8 73.0 (lock1 76.7, lock2 69.3), held-out(now trained) 68.6, flat 95.2 (speed 6.67)
+- [2026-10-01 17:31:07] [fb] [b10] screen M30: unseen8 70.8 vs F3a 66.7, flat 88.8 vs 85.6 → PASS
+- [2026-10-01 17:38:56] [fb] **m30_s47 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-01 18:19:54] [fb] [b10] M30 s47: unseen8 69.5 (lock1 71.4, lock2 67.5), held-out(now trained) 66.8, flat 91.1 (speed 6.37)
+- [2026-10-01 18:19:54] [fb] **m30_s48 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-01 19:00:55] [fb] [b10] M30 s48: unseen8 71.1 (lock1 71.2, lock2 70.9), held-out(now trained) 69.0, flat 94.2 (speed 6.50)
+- [2026-10-01 19:00:55] [fb] **m30_s49 start** | train.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-01 19:41:11] [fb] [b10] M30 s49: unseen8 65.5 (lock1 67.2, lock2 63.8), held-out(now trained) 61.4, flat 82.6 (speed 6.56)
+- [2026-10-01 19:41:11] [fb] [b10] confirm M30 vs F3a (s47–49, unseen8): diff +3.3 [95% CI -4.9, +11.5], wins 2/3, flat ok True → REPLACE F3a
+- [2026-10-01 19:41:25] [fb] [b10] smoke M30 flat_f1.0_average: OK
+- [2026-10-01 19:41:39] [fb] [b10] smoke M30 flat_f1.0_multiply: OK
+- [2026-10-01 19:41:57] [fb] [b10] smoke M30 flat_f0.2_average: OK
+- [2026-10-01 19:42:13] [fb] [b10] smoke M30 flat_f0.2_multiply: OK
+- [2026-10-01 19:42:29] [fb] [b10] smoke M30 boxes_mid_f1.0_average: OK
+- [2026-10-01 19:42:47] [fb] [b10] smoke M30 boxes_mid_f1.0_multiply: OK
+- [2026-10-01 19:43:09] [fb] [b10] smoke M30 boxes_mid_f0.2_average: OK
+- [2026-10-01 19:43:31] [fb] [b10] smoke M30 boxes_mid_f0.2_multiply: OK
+- [2026-10-01 19:43:50] [fb] [b10] smoke M30 official play_one_episode: exit 0
+- [2026-10-01 19:43:50] [fb] [b10] NEW SUBMISSION: M30 `logs/rsl_rl/ant/2026-10-01_17-39-01_m30_s47/model_2999.pt`
+- [2026-10-01 19:43:50] [fb] [b10] ## batch 10 done
+- [2026-10-01 19:43:50] [fb] [b11] ## batch 11 start (primary metric unseen14; final untouched check lockbox 3)
+- [2026-10-01 19:43:58] [fb] [b11] symmetry check exit 0: FAIL → A3 skipped
+- [2026-10-01 19:44:10] smoke b11_lstm (Isaac-Ant-R6-OracleLSTM-v0): OK
+- [2026-10-01 19:44:25] [fb] [b11] smoke LSTM training + official play_one_episode: OK
+- [2026-10-01 19:56:00] [fb] [b11] H2 s42: unseen14 71.3 (held-out 71.7, lock1 75.5, lock2 75.0, μ0.2 mult 37.4), flat 96.6 (speed 6.38)
+- [2026-10-01 19:56:00] [fb] [b11] H2 s43: unseen14 73.3 (held-out 73.5, lock1 77.9, lock2 78.0, μ0.2 mult 34.6), flat 95.5 (speed 6.37)
+- [2026-10-01 19:56:00] [fb] [b11] H2 s47: unseen14 67.0 (held-out 67.9, lock1 71.4, lock2 67.8, μ0.2 mult 41.4), flat 90.6 (speed 6.22)
+- [2026-10-01 19:56:00] [fb] [b11] H2 s48: unseen14 68.2 (held-out 71.2, lock1 69.2, lock2 71.9, μ0.2 mult 34.2), flat 83.6 (speed 5.96)
+- [2026-10-01 19:56:00] [fb] [b11] H2 s49: unseen14 62.0 (held-out 63.9, lock1 64.3, lock2 63.1, μ0.2 mult 39.5), flat 75.3 (speed 6.06)
+- [2026-10-01 19:56:00] [fb] [b11] B1 (H2 energy) vs F3a (seeds [42, 43, 47, 48, 49]): unseen14 diff +3.5 [95% CI -3.0, +10.1], wins 4/5, flat diff +3.3 → PASSES replacement conditions
+- [2026-10-01 19:56:00] [fb] **n1_s42 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'agent.policy.actor_hidden_dims=[512,256,128]', 'agent.policy.critic_hidden_dims=[512,256,128]'] | 1600 it
+- [2026-10-01 20:21:14] [fb] [b11] N1 s42: unseen14 65.5 (held-out 69.3, lock1 66.4, lock2 66.5, μ0.2 mult 38.9), flat 87.7 (speed 5.35)
+- [2026-10-01 20:21:14] [fb] **n1_s43 start** | train.py | task Isaac-Ant-R2-Oracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005', 'agent.policy.actor_hidden_dims=[512,256,128]', 'agent.policy.critic_hidden_dims=[512,256,128]'] | 1600 it
+- [2026-10-01 20:47:27] [fb] [b11] N1 s43: unseen14 63.8 (held-out 66.1, lock1 65.5, lock2 66.7, μ0.2 mult 34.5), flat 84.2 (speed 5.38)
+- [2026-10-01 20:47:27] [fb] [b11] screen N1: unseen14 diff +0.2, flat diff +0.3 vs F3a s42/43 → fail
+- [2026-10-01 20:47:27] [fb] **f1_s47 start** | train.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 20:58:37] [fb] **h1_s47 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_20-47-32_f1_s47/model_999.pt`
+- [2026-10-01 21:05:15] [fb] **f1_s48 start** | train.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 21:16:28] [fb] **h1_s48 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_21-05-19_f1_s48/model_999.pt`
+- [2026-10-01 21:23:11] [fb] **f1_s49 start** | train.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it
+- [2026-10-01 21:33:46] [fb] **h1_s49 start** | train_finetune.py | task Isaac-Ant-R2-LowFricOracle-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 600 it | warm start `logs/rsl_rl/ant/2026-10-01_21-23-16_f1_s49/model_999.pt`
+- [2026-10-01 22:08:24] [fb] [b11] H1 s42: unseen14 59.8 (held-out 61.7, lock1 58.2, lock2 56.9, μ0.2 mult 67.6), flat 79.9 (speed 4.69)
+- [2026-10-01 22:08:24] [fb] [b11] H1 s43: unseen14 63.9 (held-out 67.9, lock1 60.1, lock2 61.7, μ0.2 mult 67.9), flat 85.5 (speed 5.13)
+- [2026-10-01 22:08:24] [fb] [b11] H1 s47: unseen14 52.2 (held-out 56.0, lock1 46.6, lock2 50.8, μ0.2 mult 60.7), flat 67.4 (speed 4.13)
+- [2026-10-01 22:08:24] [fb] [b11] H1 s48: unseen14 61.1 (held-out 64.1, lock1 57.0, lock2 60.6, μ0.2 mult 64.9), flat 77.1 (speed 4.64)
+- [2026-10-01 22:08:24] [fb] [b11] H1 s49: unseen14 65.4 (held-out 65.9, lock1 62.2, lock2 67.0, μ0.2 mult 70.0), flat 83.6 (speed 5.01)
+- [2026-10-01 22:08:24] [fb] [b11] C1 (H1 low friction) vs F3a (seeds [42, 43, 47, 48, 49]): unseen14 diff -4.4 [95% CI -10.0, +1.3], wins 0/5, flat diff -6.3 → no
+- [2026-10-01 22:08:24] [fb] **ls_s42 start** | train.py | task Isaac-Ant-R6-OracleLSTM-v0 | train overrides [] | 1600 it
+- [2026-10-01 22:47:47] [fb] [b11] LS s42: unseen14 61.5 (held-out 65.8, lock1 63.2, lock2 59.4, μ0.2 mult 41.2), flat 78.1 (speed 4.62)
+- [2026-10-01 22:47:47] [fb] **ls_s43 start** | train.py | task Isaac-Ant-R6-OracleLSTM-v0 | train overrides [] | 1600 it
+- [2026-10-01 23:27:37] [fb] [b11] LS s43: unseen14 60.3 (held-out 63.1, lock1 63.6, lock2 58.3, μ0.2 mult 41.6), flat 81.6 (speed 4.83)
+- [2026-10-01 23:27:37] [fb] [b11] screen LS: unseen14 diff -3.6, flat diff -5.7 vs F3a s42/43 → fail
+- [2026-10-01 23:27:37] [fb] [b11] candidates meeting replacement conditions vs F3a: ['B1 (H2 energy)']; current submission before the final step: M30
+- [2026-10-01 23:29:19] [fb] [b11] lockbox 3 f3a_s47: obstacles_high 51.7, wave_big 8.4, rails_high 65.9, pits_deep 60.9 → 46.8
+- [2026-10-01 23:30:33] [fb] [b11] lockbox 3 m30_s47: obstacles_high 55.0, wave_big 24.2, rails_high 73.9, pits_deep 74.6 → 56.9
+- [2026-10-01 23:30:33] [fb] [b11] M30 keeps the submission: lockbox 3 56.9 ≥ F3a 46.8 − 3
+- [2026-10-01 23:30:33] [fb] [b11] B1 (H2 energy) vs M30 (s47–49, unseen8): diffs [0.1, -0.5, -1.8] → keep M30
+- [2026-10-01 23:30:33] [fb] [b11] ## batch 11 done
+- [2026-10-01 23:31:01] [fb] [b12] ## batch 12 start (current submission: M30; metric unseen9; final check lockbox 4)
+- [2026-10-01 23:31:09] [fb] [b12] symmetry check (y-mirror by geometry) exit 0: FAIL → SY30 skipped
+- [2026-10-01 23:31:44] [fb] [b12] M30 s42: unseen9 64.0 (lock1 69.8, lock2 67.2, μ0.2 mult 27.4), flat 82.5 (speed 6.26, fall 34%)
+- [2026-10-01 23:31:44] [fb] [b12] M30 s43: unseen9 67.9 (lock1 76.7, lock2 69.3, μ0.2 mult 27.5), flat 95.2 (speed 6.67, fall 20%)
+- [2026-10-01 23:31:44] [fb] **m40_s42 start** | train_finetune.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-01 23:50:54] [fb] [b12] M40 s42: unseen9 64.9 (lock1 73.6, lock2 70.0, μ0.2 mult 9.4), flat 87.1 (speed 6.59, fall 31%)
+- [2026-10-01 23:50:54] [fb] **m40_s43 start** | train_finetune.py | task Isaac-Ant-R5-AllMix-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 00:09:08] [fb] [b12] M40 s43: unseen9 71.4 (lock1 79.0, lock2 73.8, μ0.2 mult 31.7), flat 99.9 (speed 6.61, fall 10%)
+- [2026-10-02 00:09:08] [fb] [b12] screen M40: unseen9 68.2 vs M30 66.0, μ0.2 mult 20.6 vs 27.4, flat 93.5 vs 88.8 → fail
+- [2026-10-02 00:09:08] [fb] **lf30_s42 start** | train.py | task Isaac-Ant-R7-AllMixLowFric-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-02 00:49:39] [fb] [b12] LF30 s42: unseen9 51.6 (lock1 53.2, lock2 51.2, μ0.2 mult 46.9), flat 69.5 (speed 4.82, fall 18%)
+- [2026-10-02 00:49:39] [fb] **lf30_s43 start** | train.py | task Isaac-Ant-R7-AllMixLowFric-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 3000 it
+- [2026-10-02 01:30:13] [fb] [b12] LF30 s43: unseen9 66.7 (lock1 68.9, lock2 66.7, μ0.2 mult 57.7), flat 91.0 (speed 6.01, fall 15%)
+- [2026-10-02 01:30:13] [fb] [b12] screen LF30: unseen9 59.1 vs M30 66.0, μ0.2 mult 52.3 vs 27.4, flat 80.3 vs 88.8 → fail
+- [2026-10-02 01:31:11] [fb] [b12] no candidate confirmed → keep M30
+- [2026-10-02 01:31:11] [fb] [b12] ## batch 12 done
+- [2026-10-02 01:31:43] [fb] [b13] ## batch 13 start (current submission M30; final check lockbox4)
+- [2026-10-02 01:31:43] [fb] [b13] reference M30 s42/43 unseen9 66.0, μ0.2 mult 27.4, flat 88.8; control M40 unseen9 68.2
+- [2026-10-02 01:31:43] [fb] **mf40a_s42 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-02 01:50:03] [fb] [b13] MF40a s42: unseen9 66.3 (lock1 67.7, lock2 69.7, μ0.2 mult 47.3), flat 89.0 (speed 5.95, fall 13%)
+- [2026-10-02 01:50:03] [fb] **mf40a_s43 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 02:08:22] [fb] [b13] MF40a s43: unseen9 62.4 (lock1 66.8, lock2 61.8, μ0.2 mult 47.2), flat 83.3 (speed 6.23, fall 34%)
+- [2026-10-02 02:08:22] [fb] [b13] screen MF40a: unseen9 64.4 vs M30 66.0 (control M40 68.2), μ0.2 mult 47.3 vs 27.4, flat 86.1 vs 88.8 → fail
+- [2026-10-02 02:08:22] [fb] **mf40b_s42 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-02 02:26:46] [fb] [b13] MF40b s42: unseen9 65.0 (lock1 68.4, lock2 70.7, μ0.2 mult 28.6), flat 92.1 (speed 6.09, fall 10%)
+- [2026-10-02 02:26:46] [fb] **mf40b_s43 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 02:45:17] [fb] [b13] MF40b s43: unseen9 70.2 (lock1 76.9, lock2 72.3, μ0.2 mult 35.1), flat 96.3 (speed 6.81, fall 22%)
+- [2026-10-02 02:45:17] [fb] [b13] screen MF40b: unseen9 67.6 vs M30 66.0 (control M40 68.2), μ0.2 mult 31.8 vs 27.4, flat 94.2 vs 88.8 → fail
+- [2026-10-02 02:45:17] [fb] **sya40_s42 start** | train_finetune.py | task Isaac-Ant-R7-AllMixSym-v0 | train overrides [] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-02 03:07:38] [fb] [b13] SYA40 s42: unseen9 45.5 (lock1 50.1, lock2 49.0, μ0.2 mult 13.0), flat 65.3 (speed 5.68, fall 50%)
+- [2026-10-02 03:07:38] [fb] **sya40_s43 start** | train_finetune.py | task Isaac-Ant-R7-AllMixSym-v0 | train overrides [] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 03:29:47] [fb] [b13] SYA40 s43: unseen9 46.1 (lock1 50.7, lock2 48.6, μ0.2 mult 17.9), flat 63.6 (speed 6.25, fall 57%)
+- [2026-10-02 03:29:47] [fb] [b13] screen SYA40: unseen9 45.8 vs M30 66.0 (control M40 68.2), μ0.2 mult 15.5 vs 27.4, flat 64.4 vs 88.8 → fail
+- [2026-10-02 03:29:47] [fb] [b13] no candidate confirmed → keep M30
+- [2026-10-02 03:29:47] [fb] [b13] ## batch 13 done
+- [2026-10-02 03:29:52] [fb] [b14] ## batch 14 start (current submission M30; final check lockbox4)
+- [2026-10-02 03:30:15] smoke b14_allmixwide (Isaac-Ant-R9-AllMixWide-v0): OK
+- [2026-10-02 03:30:15] [fb] [b14] smoke Isaac-Ant-R9-AllMixWide-v0: OK
+- [2026-10-02 03:30:29] smoke b14_allmixwidemf04 (Isaac-Ant-R9-AllMixWideMF04-v0): OK
+- [2026-10-02 03:30:29] [fb] [b14] smoke Isaac-Ant-R9-AllMixWideMF04-v0: OK
+- [2026-10-02 03:30:29] [fb] [b14] reference M30 s42/43 unseen9 66.0, μ0.2 mult 27.4, flat 88.8; control M40 unseen9 68.2
+- [2026-10-02 03:30:29] [fb] **ax40_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWide-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-02 03:49:02] [fb] [b14] AX40 s42: unseen9 66.3 (lock1 73.7, lock2 70.4, μ0.2 mult 20.7), flat 94.0 (speed 6.77, fall 28%)
+- [2026-10-02 03:49:02] [fb] **ax40_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWide-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 04:07:03] [fb] [b14] AX40 s43: unseen9 70.5 (lock1 77.8, lock2 72.7, μ0.2 mult 32.4), flat 98.5 (speed 7.04, fall 21%)
+- [2026-10-02 04:07:03] [fb] [b14] screen AX40: unseen9 68.4 vs M30 66.0 (control M40 68.2), μ0.2 mult 26.5 vs 27.4, flat 96.3 vs 88.8 → fail
+- [2026-10-02 04:07:03] [fb] **axf40_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-08-30_m30_s42/model_2999.pt`
+- [2026-10-02 04:25:10] [fb] [b14] AXF40 s42: unseen9 68.6 (lock1 72.5, lock2 74.2, μ0.2 mult 31.1), flat 93.5 (speed 6.44, fall 16%)
+- [2026-10-02 04:25:10] [fb] **axf40_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_16-49-50_m30_s43/model_2999.pt`
+- [2026-10-02 04:43:27] [fb] [b14] AXF40 s43: unseen9 69.2 (lock1 74.6, lock2 72.6, μ0.2 mult 34.2), flat 102.3 (speed 7.12, fall 13%)
+- [2026-10-02 04:43:27] [fb] [b14] screen AXF40: unseen9 68.9 vs M30 66.0 (control M40 68.2), μ0.2 mult 32.7 vs 27.4, flat 97.9 vs 88.8 → PASS
+- [2026-10-02 04:43:27] [fb] **mf50b_s42 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_02-08-26_mf40b_s42/model_999.pt`
+- [2026-10-02 05:01:44] [fb] [b14] MF50b s42: unseen9 63.9 (lock1 69.7, lock2 67.1, μ0.2 mult 27.9), flat 88.5 (speed 6.52, fall 28%)
+- [2026-10-02 05:01:44] [fb] **mf50b_s43 start** | train_finetune.py | task Isaac-Ant-R8-AllMixMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_02-26-51_mf40b_s43/model_999.pt`
+- [2026-10-02 05:19:55] [fb] [b14] MF50b s43: unseen9 68.4 (lock1 73.4, lock2 72.0, μ0.2 mult 33.7), flat 94.2 (speed 7.02, fall 27%)
+- [2026-10-02 05:19:55] [fb] [b14] screen MF50b: unseen9 66.1 vs M30 66.0 (control M40 68.2), μ0.2 mult 30.8 vs 27.4, flat 91.4 vs 88.8 → fail
+- [2026-10-02 05:19:55] [fb] **axf40_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_17-39-01_m30_s47/model_2999.pt`
+- [2026-10-02 05:37:52] [fb] [b14] AXF40 s47: unseen9 69.5 (lock1 71.7, lock2 76.2, μ0.2 mult 33.6), flat 93.7 (speed 6.42, fall 12%)
+- [2026-10-02 05:37:52] [fb] **axf40_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_18-19-58_m30_s48/model_2999.pt`
+- [2026-10-02 05:55:47] [fb] [b14] AXF40 s48: unseen9 68.9 (lock1 73.6, lock2 74.6, μ0.2 mult 27.5), flat 99.3 (speed 6.62, fall 4%)
+- [2026-10-02 05:55:47] [fb] **axf40_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-01_19-00-59_m30_s49/model_2999.pt`
+- [2026-10-02 06:13:47] [fb] [b14] AXF40 s49: unseen9 76.9 (lock1 85.6, lock2 83.5, μ0.2 mult 15.4), flat 94.6 (speed 10.39, fall 66%)
+- [2026-10-02 06:13:47] [fb] [b14] confirm AXF40 vs M30 (s47–49): unseen9 diff +8.2 [95% CI -8.9, +25.2], wins 3/3, μ0.2 mult diff +2.6, flat +6.5 → PASSES
+- [2026-10-02 06:15:23] [fb] [b14] lockbox4 m30_s47: stones_hard 34.6, cylinders_tall 59.0, boxes_fine12 51.4, wave_lowfric 32.7 → 44.4
+- [2026-10-02 06:16:39] [fb] [b14] lockbox4 axf40_s47: stones_hard 32.1, cylinders_tall 68.2, boxes_fine12 49.6, wave_lowfric 32.6 → 45.6
+- [2026-10-02 06:16:53] [fb] [b14] smoke AXF40 flat_f1.0_average: OK
+- [2026-10-02 06:17:07] [fb] [b14] smoke AXF40 flat_f1.0_multiply: OK
+- [2026-10-02 06:17:21] [fb] [b14] smoke AXF40 flat_f0.2_average: OK
+- [2026-10-02 06:17:35] [fb] [b14] smoke AXF40 flat_f0.2_multiply: OK
+- [2026-10-02 06:17:52] [fb] [b14] smoke AXF40 boxes_mid_f1.0_average: OK
+- [2026-10-02 06:18:10] [fb] [b14] smoke AXF40 boxes_mid_f1.0_multiply: OK
+- [2026-10-02 06:18:27] [fb] [b14] smoke AXF40 boxes_mid_f0.2_average: OK
+- [2026-10-02 06:18:44] [fb] [b14] smoke AXF40 boxes_mid_f0.2_multiply: OK
+- [2026-10-02 06:19:01] [fb] [b14] smoke AXF40 official play_one_episode: exit 0
+- [2026-10-02 06:19:01] [fb] [b14] NEW SUBMISSION: AXF40 `logs/rsl_rl/ant/2026-10-02_05-19-59_axf40_s47/model_999.pt` (lockbox4 45.6 vs M30 44.4)
+- [2026-10-02 06:19:01] [fb] [b14] ## batch 14 done
+- [2026-10-02 06:21:22] [fb] [b12] lockbox 4 axf40_s49: stones_hard 66.2, cylinders_tall 86.9, boxes_fine12 80.9, wave_lowfric 18.4 → 63.1
+- [2026-10-02 06:23:21] [fb] [b15] ## batch 15 start (current submission AXF40; final check lockbox5)
+- [2026-10-02 06:23:21] [fb] [b15] reference axf40_s49 (SP parent) unseen9 76.9, mult 15.4, flat 94.6 (fall 66%)
+- [2026-10-02 06:23:21] [fb] **sp50_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 06:41:10] [fb] [b15] SP50 s42: unseen9 103.4 (lock1 110.9, lock2 117.0, μ0.2 mult 18.8), flat 133.2 (speed 11.69, fall 50%)
+- [2026-10-02 06:41:10] [fb] **sp50_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 06:59:11] [fb] [b15] SP50 s43: unseen9 106.3 (lock1 116.4, lock2 117.4, μ0.2 mult 21.3), flat 137.1 (speed 11.71, fall 48%)
+- [2026-10-02 06:59:11] [fb] [b15] screen SP50: unseen9 diff +28.0 (+26.5, +29.4), μ0.2 mult diff +4.7, flat +40.6, flat fall 49% → PASS
+- [2026-10-02 06:59:11] [fb] **spf20_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 07:17:01] [fb] [b15] SPF20 s42: unseen9 91.1 (lock1 93.6, lock2 104.2, μ0.2 mult 28.2), flat 103.6 (speed 10.98, fall 67%)
+- [2026-10-02 07:17:01] [fb] **spf20_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 07:34:45] [fb] [b15] SPF20 s43: unseen9 104.2 (lock1 113.4, lock2 113.3, μ0.2 mult 30.6), flat 137.0 (speed 11.36, fall 43%)
+- [2026-10-02 07:34:45] [fb] [b15] screen SPF20: unseen9 diff +20.8 (+14.2, +27.3), μ0.2 mult diff +14.0, flat +25.7, flat fall 55% → PASS
+- [2026-10-02 07:34:45] [fb] **axf20_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_04-07-08_axf40_s42/model_999.pt`
+- [2026-10-02 07:52:46] [fb] [b15] AXF20 s42: unseen9 67.4 (lock1 69.4, lock2 70.0, μ0.2 mult 49.3), flat 91.3 (speed 6.26, fall 17%)
+- [2026-10-02 07:52:46] [fb] **axf20_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_04-25-15_axf40_s43/model_999.pt`
+- [2026-10-02 08:11:10] [fb] [b15] AXF20 s43: unseen9 67.0 (lock1 71.8, lock2 68.5, μ0.2 mult 42.1), flat 87.8 (speed 6.77, fall 39%)
+- [2026-10-02 08:11:10] [fb] [b15] screen AXF20: unseen9 diff -1.7 (-1.2, -2.2), μ0.2 mult diff +13.0, flat -8.3, flat fall 28% → fail
+- [2026-10-02 08:11:10] [fb] **sp50_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 08:28:51] [fb] [b15] SP50 s47: unseen9 95.1 (lock1 105.5, lock2 103.5, μ0.2 mult 19.9), flat 120.9 (speed 12.00, fall 59%)
+- [2026-10-02 08:28:51] [fb] **sp50_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 08:46:38] [fb] [b15] SP50 s48: unseen9 95.0 (lock1 106.9, lock2 102.7, μ0.2 mult 16.7), flat 112.1 (speed 11.19, fall 56%)
+- [2026-10-02 08:46:38] [fb] **sp50_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 09:04:13] [fb] [b15] SP50 s49: unseen9 115.5 (lock1 118.8, lock2 136.2, μ0.2 mult 19.2), flat 135.2 (speed 12.01, fall 53%)
+- [2026-10-02 09:04:13] [fb] [b15] confirm SP50 (s47–49): unseen9 diff +25.0 [95% CI -4.3, +54.3], μ0.2 mult diff +3.2, flat +28.1, flat fall 56% → PASSES
+- [2026-10-02 09:04:13] [fb] **spf20_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 09:21:54] [fb] [b15] SPF20 s47: unseen9 91.5 (lock1 98.7, lock2 99.7, μ0.2 mult 29.4), flat 100.8 (speed 10.21, fall 65%)
+- [2026-10-02 09:21:54] [fb] **spf20_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 09:39:45] [fb] [b15] SPF20 s48: unseen9 96.7 (lock1 102.3, lock2 109.9, μ0.2 mult 21.3), flat 118.7 (speed 11.38, fall 60%)
+- [2026-10-02 09:39:45] [fb] **spf20_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF02-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_05-55-51_axf40_s49/model_999.pt`
+- [2026-10-02 09:57:20] [fb] [b15] SPF20 s49: unseen9 84.9 (lock1 88.3, lock2 95.7, μ0.2 mult 28.2), flat 114.6 (speed 10.30, fall 53%)
+- [2026-10-02 09:57:20] [fb] [b15] confirm SPF20 (s47–49): unseen9 diff +14.2 [95% CI -0.4, +28.8], μ0.2 mult diff +10.9, flat +16.7, flat fall 59% → PASSES
+- [2026-10-02 09:58:46] [fb] [b15] lockbox5 axf40_s47: stairs_high 30.5, slope_steep 60.4, cones_dense 69.1, boxes_lowfric 49.8 → 52.4
+- [2026-10-02 10:00:15] [fb] [b15] lockbox5 axf40_s49: stairs_high 72.9, slope_steep 67.4, cones_dense 81.7, boxes_lowfric 30.0 → 63.0
+- [2026-10-02 10:01:33] [fb] [b15] lockbox5 sp50_s47: stairs_high 93.1, slope_steep 85.8, cones_dense 97.5, boxes_lowfric 38.5 → 78.7
+- [2026-10-02 10:03:08] [fb] [b15] lockbox5 spf20_s47: stairs_high 87.0, slope_steep 69.6, cones_dense 103.5, boxes_lowfric 44.0 → 76.0
+- [2026-10-02 10:03:25] [fb] [b15] final AXF40 (axf40_s47): lockbox5 52.4, official boxes 57.1
+- [2026-10-02 10:03:25] [fb] [b15] final AXF40_s49 (axf40_s49): lockbox5 63.0, official boxes 86.9
+- [2026-10-02 10:03:25] [fb] [b15] final SP50 (sp50_s47): lockbox5 78.7, official boxes 107.7
+- [2026-10-02 10:03:25] [fb] [b15] final SPF20 (spf20_s47): lockbox5 76.0, official boxes 100.1
+- [2026-10-02 10:03:25] [fb] [b15] NEW SUBMISSION: SP50 `logs/rsl_rl/ant/2026-10-02_08-11-14_sp50_s47/model_999.pt` (lockbox5 78.7 vs AXF40 52.4; official 107.7 vs 57.1)
+- [2026-10-02 10:03:25] [fb] [b15] ## batch 15 done
+- [2026-10-02 10:18:52] [fb] [b16] ## batch 16 start (line SP50, parent sp50_s{s}; candidates {'C60': 'Isaac-Ant-R9-AllMixWideMF04-v0', 'CF30': 'Isaac-Ant-R9-AllMixWideMF03-v0', 'CH': 'Isaac-Ant-R9-AllMixHardMF04-v0'}; final check lockbox6)
+- [2026-10-02 10:18:52] [fb] [b16] parent sp50_s42: unseen9 103.4 (lock1 110.9, lock2 117.0, μ0.2 mult 18.8), flat 133.2 (speed 11.69, fall 50%)
+- [2026-10-02 10:18:52] [fb] [b16] parent sp50_s43: unseen9 106.3 (lock1 116.4, lock2 117.4, μ0.2 mult 21.3), flat 137.1 (speed 11.71, fall 48%)
+- [2026-10-02 10:18:52] [fb] [b16] parent sp50_s47: unseen9 95.1 (lock1 105.5, lock2 103.5, μ0.2 mult 19.9), flat 120.9 (speed 12.00, fall 59%)
+- [2026-10-02 10:18:52] [fb] [b16] parent sp50_s48: unseen9 95.0 (lock1 106.9, lock2 102.7, μ0.2 mult 16.7), flat 112.1 (speed 11.19, fall 56%)
+- [2026-10-02 10:18:52] [fb] [b16] parent sp50_s49: unseen9 115.5 (lock1 118.8, lock2 136.2, μ0.2 mult 19.2), flat 135.2 (speed 12.01, fall 53%)
+- [2026-10-02 10:18:52] [fb] **c60_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-23-26_sp50_s42/model_999.pt`
+- [2026-10-02 10:27:34] [fb] [b17] ## batch 17 start (current submission SP50; fall reduction on the SP50 line; final check lockbox6)
+- [2026-10-02 10:27:34] [fb] [b17] parent sp50_s42: unseen9 103.4, unseen fall 49%, flat fall 50%
+- [2026-10-02 10:27:34] [fb] [b17] parent sp50_s43: unseen9 106.3, unseen fall 52%, flat fall 48%
+- [2026-10-02 10:27:34] [fb] [b17] parent sp50_s47: unseen9 95.1, unseen fall 62%, flat fall 59%
+- [2026-10-02 10:27:34] [fb] [b17] parent sp50_s48: unseen9 95.0, unseen fall 60%, flat fall 56%
+- [2026-10-02 10:27:34] [fb] [b17] parent sp50_s49: unseen9 115.5, unseen fall 42%, flat fall 53%
+- [2026-10-02 10:38:51] [fb] [b17] C60 s42: unseen9 125.5 (lock1 134.0, lock2 142.2, μ0.2 mult 24.2), flat 152.9 (speed 12.42, fall 40%), unseen fall 38%
+- [2026-10-02 10:38:52] [fb] **c60_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-41-15_sp50_s43/model_999.pt`
+- [2026-10-02 10:56:33] [fb] [b17] C60 s43: unseen9 118.2 (lock1 128.6, lock2 131.0, μ0.2 mult 25.3), flat 137.2 (speed 13.67, fall 60%), unseen fall 50%
+- [2026-10-02 10:56:33] [fb] [b17] control C60: unseen9 diff +17.0, mult +4.6, unseen fall diff -7 points, flat fall diff +1 → score rule PASS
+- [2026-10-02 10:56:33] [fb] **fp20_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-23-26_sp50_s42/model_999.pt`
+- [2026-10-02 11:14:37] [fb] [b17] FP20 s42: unseen9 109.0 (lock1 119.6, lock2 118.9, μ0.2 mult 27.0), flat 126.4 (speed 11.16, fall 36%), unseen fall 29%
+- [2026-10-02 11:14:37] [fb] **fp20_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-41-15_sp50_s43/model_999.pt`
+- [2026-10-02 11:32:10] [fb] [b17] FP20 s43: unseen9 106.4 (lock1 112.2, lock2 120.6, μ0.2 mult 26.8), flat 119.9 (speed 11.12, fall 41%), unseen fall 33%
+- [2026-10-02 11:32:10] [fb] [b17] screen FP20: unseen9 diff +2.9 (+5.6, +0.1), unseen fall diff -20 points, flat fall diff -11 → PASS
+- [2026-10-02 11:32:10] [fb] **fp50_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP50-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-23-26_sp50_s42/model_999.pt`
+- [2026-10-02 11:50:10] [fb] [b17] FP50 s42: unseen9 51.6 (lock1 57.7, lock2 58.5, μ0.2 mult -0.8), flat 73.3 (speed 8.45, fall 43%), unseen fall 37%
+- [2026-10-02 11:50:10] [fb] **fp50_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP50-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-41-15_sp50_s43/model_999.pt`
+- [2026-10-02 12:07:52] [fb] [b17] FP50 s43: unseen9 60.2 (lock1 69.0, lock2 69.2, μ0.2 mult -11.2), flat 79.9 (speed 8.68, fall 37%), unseen fall 37%
+- [2026-10-02 12:07:52] [fb] [b17] screen FP50: unseen9 diff -49.0 (-51.8, -46.1), unseen fall diff -14 points, flat fall diff -9 → fail
+- [2026-10-02 12:07:52] [fb] **fp20_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-11-14_sp50_s47/model_999.pt`
+- [2026-10-02 12:26:00] [fb] [b17] FP20 s47: unseen9 104.1 (lock1 113.1, lock2 114.5, μ0.2 mult 26.9), flat 129.0 (speed 10.83, fall 28%), unseen fall 28%
+- [2026-10-02 12:26:00] [fb] **fp20_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-28-56_sp50_s48/model_999.pt`
+- [2026-10-02 12:41:57] [fb] [b17] ## batch 17 start (current submission SP50; fall reduction on the SP50 line; final check lockbox6)
+- [2026-10-02 12:41:57] [fb] [b17] parent sp50_s42: unseen9 103.4, unseen fall 49%, flat fall 50%
+- [2026-10-02 12:41:57] [fb] [b17] parent sp50_s43: unseen9 106.3, unseen fall 52%, flat fall 48%
+- [2026-10-02 12:41:57] [fb] [b17] parent sp50_s47: unseen9 95.1, unseen fall 62%, flat fall 59%
+- [2026-10-02 12:41:57] [fb] [b17] parent sp50_s48: unseen9 95.0, unseen fall 60%, flat fall 56%
+- [2026-10-02 12:41:57] [fb] [b17] parent sp50_s49: unseen9 115.5, unseen fall 42%, flat fall 53%
+- [2026-10-02 12:41:57] [fb] [b17] C60 s42: unseen9 125.5 (lock1 134.0, lock2 142.2, μ0.2 mult 24.2), flat 152.9 (speed 12.42, fall 40%), unseen fall 38%
+- [2026-10-02 12:41:57] [fb] [b17] C60 s43: unseen9 118.2 (lock1 128.6, lock2 131.0, μ0.2 mult 25.3), flat 137.2 (speed 13.67, fall 60%), unseen fall 50%
+- [2026-10-02 12:41:57] [fb] [b17] control C60: unseen9 diff +17.0, mult +4.6, unseen fall diff -7 points, flat fall diff +1 → score rule PASS
+- [2026-10-02 12:41:57] [fb] [b17] FP20 s42: unseen9 109.0 (lock1 119.6, lock2 118.9, μ0.2 mult 27.0), flat 126.4 (speed 11.16, fall 36%), unseen fall 29%
+- [2026-10-02 12:41:57] [fb] [b17] FP20 s43: unseen9 106.4 (lock1 112.2, lock2 120.6, μ0.2 mult 26.8), flat 119.9 (speed 11.12, fall 41%), unseen fall 33%
+- [2026-10-02 12:41:57] [fb] [b17] screen FP20: unseen9 diff +2.9 (+5.6, +0.1), unseen fall diff -20 points, flat fall diff -11 → PASS
+- [2026-10-02 12:41:57] [fb] [b17] FP50 s42: unseen9 51.6 (lock1 57.7, lock2 58.5, μ0.2 mult -0.8), flat 73.3 (speed 8.45, fall 43%), unseen fall 37%
+- [2026-10-02 12:41:57] [fb] [b17] FP50 s43: unseen9 60.2 (lock1 69.0, lock2 69.2, μ0.2 mult -11.2), flat 79.9 (speed 8.68, fall 37%), unseen fall 37%
+- [2026-10-02 12:41:57] [fb] [b17] screen FP50: unseen9 diff -49.0 (-51.8, -46.1), unseen fall diff -14 points, flat fall diff -9 → fail
+- [2026-10-02 12:41:57] [fb] [b17] FP20 s47: unseen9 104.1 (lock1 113.1, lock2 114.5, μ0.2 mult 26.9), flat 129.0 (speed 10.83, fall 28%), unseen fall 28%
+- [2026-10-02 12:48:48] [fb] [b17] FP20 s48: unseen9 104.7 (lock1 112.0, lock2 118.0, μ0.2 mult 21.9), flat 125.5 (speed 10.92, fall 32%), unseen fall 30%
+- [2026-10-02 12:48:48] [fb] **fp20_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_08-46-43_sp50_s49/model_999.pt`
+- [2026-10-02 13:06:18] [fb] [b17] FP20 s49: unseen9 113.2 (lock1 123.6, lock2 126.7, μ0.2 mult 17.9), flat 139.4 (speed 11.36, fall 27%), unseen fall 24%
+- [2026-10-02 13:06:18] [fb] [b17] confirm FP20 (s47–49): unseen9 diff +5.5 [95% CI -11.2, +22.1], unseen fall diff -27 points (-34, -30, -18), flat fall diff -27 → PASSES
+- [2026-10-02 13:08:01] [fb] [b17] lockbox6 sp50_s47: stairs_down 92.6, slope_down 88.4, rough_heavy 61.6, boxobst_midfric 110.4 → 88.2
+- [2026-10-02 13:09:19] [fb] [b17] lockbox6 fp20_s47: stairs_down 114.2, slope_down 104.6, rough_heavy 62.0, boxobst_midfric 111.4 → 98.0
+- [2026-10-02 13:09:43] [fb] [b17] final SP50 (sp50_s47): lockbox6 88.2 (fall 65%), official 107.7
+- [2026-10-02 13:09:43] [fb] [b17] final FP20 (fp20_s47): lockbox6 98.0 (fall 30%), official 117.1
+- [2026-10-02 13:09:43] [fb] [b17] NEW SUBMISSION: FP20 `logs/rsl_rl/ant/2026-10-02_12-07-57_fp20_s47/model_999.pt` (fewer falls)
+- [2026-10-02 13:09:43] [fb] [b17] ## batch 17 done
+- [2026-10-02 13:09:43] [fb] [b18] ## batch 18 start (current submission FP20; continue the FP20 line; final check lockbox7)
+- [2026-10-02 13:09:43] [fb] [b18] parent fp20_s42: unseen9 109.0, unseen fall 29%
+- [2026-10-02 13:09:43] [fb] [b18] parent fp20_s43: unseen9 106.4, unseen fall 33%
+- [2026-10-02 13:09:43] [fb] [b18] parent fp20_s47: unseen9 104.1, unseen fall 28%
+- [2026-10-02 13:09:43] [fb] [b18] parent fp20_s48: unseen9 104.7, unseen fall 30%
+- [2026-10-02 13:09:43] [fb] [b18] parent fp20_s49: unseen9 113.2, unseen fall 24%
+- [2026-10-02 13:09:44] [fb] **fpl_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_10-56-38_fp20_s42/model_999.pt`
+- [2026-10-02 13:39:01] [fb] [b18] FPL s42: unseen9 98.7 (lock1 107.0, lock2 115.9, μ0.2 mult -3.4), flat 129.3 (speed 11.02, fall 21%), unseen fall 22%
+- [2026-10-02 13:39:01] [fb] **fpl_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_11-14-41_fp20_s43/model_999.pt`
+- [2026-10-02 13:56:48] [fb] [b18] FPL s43: unseen9 108.9 (lock1 112.1, lock2 127.3, μ0.2 mult 22.7), flat 139.7 (speed 11.46, fall 22%), unseen fall 25%
+- [2026-10-02 13:56:48] [fb] [b18] screen FPL: unseen9 diff -3.9 (-10.3, +2.5), unseen fall diff -8 points → fail
+- [2026-10-02 13:56:48] [fb] **fpu_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP30-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_10-56-38_fp20_s42/model_999.pt`
+- [2026-10-02 15:15:48] [fb] [b18] FPU s42: unseen9 98.5 (lock1 107.7, lock2 109.6, μ0.2 mult 17.8), flat 127.5 (speed 10.68, fall 19%), unseen fall 24%
+- [2026-10-02 15:15:48] [fb] **fpu_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP30-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_11-14-41_fp20_s43/model_999.pt`
+- [2026-10-02 15:33:37] [fb] [b18] FPU s43: unseen9 78.1 (lock1 77.8, lock2 93.7, μ0.2 mult 17.1), flat 105.2 (speed 9.42, fall 21%), unseen fall 25%
+- [2026-10-02 15:33:37] [fb] [b18] screen FPU: unseen9 diff -19.4 (-10.5, -28.3), unseen fall diff -7 points → fail
+- [2026-10-02 15:33:37] [fb] [b18] no candidate confirmed → keep FP20
+- [2026-10-02 15:33:37] [fb] [b18] ## batch 18 done
+- [2026-10-02 15:38:33] [fb] [b19] ## batch 19 start (line FP20 = fp20_s{s}, penalty -20/fall; candidates {'FPF': 'Isaac-Ant-R9-AllMixWideMF03FP20-v0', 'FPH': 'Isaac-Ant-R9-AllMixHardMF04FP20-v0'}; final lockbox7)
+- [2026-10-02 15:38:33] [fb] [b19] parent fp20_s42: unseen9 109.0, mult 27.0, unseen fall 29%
+- [2026-10-02 15:38:33] [fb] [b19] parent fp20_s43: unseen9 106.4, mult 26.8, unseen fall 33%
+- [2026-10-02 15:38:33] [fb] [b19] parent fp20_s47: unseen9 104.1, mult 26.9, unseen fall 28%
+- [2026-10-02 15:38:33] [fb] [b19] parent fp20_s48: unseen9 104.7, mult 21.9, unseen fall 30%
+- [2026-10-02 15:38:33] [fb] [b19] parent fp20_s49: unseen9 113.2, mult 17.9, unseen fall 24%
+- [2026-10-02 15:38:33] [fb] **fpf_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF03FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_10-56-38_fp20_s42/model_999.pt`
+- [2026-10-02 15:55:57] [fb] [b19] FPF s42: unseen9 115.6 (lock1 125.0, lock2 129.7, μ0.2 mult 21.0), flat 142.4 (speed 11.79, fall 20%), unseen fall 20%
+- [2026-10-02 15:55:57] [fb] **fpf_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF03FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_11-14-41_fp20_s43/model_999.pt`
+- [2026-10-02 16:14:07] [fb] [b19] FPF s43: unseen9 104.5 (lock1 115.4, lock2 113.9, μ0.2 mult 23.2), flat 134.0 (speed 10.80, fall 18%), unseen fall 25%
+- [2026-10-02 16:14:07] [fb] [b19] screen FPF: unseen9 diff +2.3 (+6.6, -1.9), unseen fall diff -9 points, μ0.2 mult diff -4.8 → fail
+- [2026-10-02 16:14:07] [fb] **fph_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_10-56-38_fp20_s42/model_999.pt`
+- [2026-10-02 16:31:50] [fb] [b19] FPH s42: unseen9 113.0 (lock1 122.4, lock2 126.7, μ0.2 mult 20.7), flat 140.0 (speed 11.47, fall 22%), unseen fall 21%
+- [2026-10-02 16:31:50] [fb] **fph_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_11-14-41_fp20_s43/model_999.pt`
+- [2026-10-02 16:49:39] [fb] [b19] FPH s43: unseen9 111.9 (lock1 118.5, lock2 127.3, μ0.2 mult 23.7), flat 130.7 (speed 11.23, fall 30%), unseen fall 24%
+- [2026-10-02 16:49:39] [fb] [b19] screen FPH: unseen9 diff +4.7 (+4.0, +5.5), unseen fall diff -8 points, μ0.2 mult diff -4.7 → PASS
+- [2026-10-02 16:49:39] [fb] **fph_s47 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_12-07-57_fp20_s47/model_999.pt`
+- [2026-10-02 17:07:19] [fb] [b19] FPH s47: unseen9 113.0 (lock1 124.1, lock2 123.9, μ0.2 mult 25.1), flat 140.7 (speed 11.50, fall 15%), unseen fall 18%
+- [2026-10-02 17:07:19] [fb] **fph_s48 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_12-26-04_fp20_s48/model_999.pt`
+- [2026-10-02 17:25:19] [fb] [b19] FPH s48: unseen9 108.1 (lock1 118.6, lock2 120.2, μ0.2 mult 17.4), flat 125.9 (speed 11.11, fall 31%), unseen fall 28%
+- [2026-10-02 17:25:19] [fb] **fph_s49 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF04FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_12-48-53_fp20_s49/model_999.pt`
+- [2026-10-02 17:43:03] [fb] [b19] FPH s49: unseen9 109.4 (lock1 117.6, lock2 123.4, μ0.2 mult 20.6), flat 130.7 (speed 11.32, fall 35%), unseen fall 27%
+- [2026-10-02 17:43:03] [fb] [b19] confirm FPH (s47–49): unseen9 diff +2.8 [95% CI -13.0, +18.6], unseen fall diff -3 points → no
+- [2026-10-02 17:43:03] [fb] [b19] no candidate confirmed → keep FP20
+- [2026-10-02 17:43:03] [fb] [b19] ## batch 19 done
+- [2026-10-02 17:43:45] [fb] [b20] ## batch 20 start (line FP20 = fp20_s{s}; candidates {'HF': 'Isaac-Ant-R9-AllMixHardMF03FP20-v0'}; final lockbox7)
+- [2026-10-02 17:43:45] [fb] [b20] parent fp20_s42: unseen9 109.0, mult 27.0, unseen fall 29%
+- [2026-10-02 17:43:45] [fb] [b20] parent fp20_s43: unseen9 106.4, mult 26.8, unseen fall 33%
+- [2026-10-02 17:43:45] [fb] [b20] parent fp20_s47: unseen9 104.1, mult 26.9, unseen fall 28%
+- [2026-10-02 17:43:45] [fb] [b20] parent fp20_s48: unseen9 104.7, mult 21.9, unseen fall 30%
+- [2026-10-02 17:43:45] [fb] [b20] parent fp20_s49: unseen9 113.2, mult 17.9, unseen fall 24%
+- [2026-10-02 17:43:45] [fb] **hf_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF03FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_10-56-38_fp20_s42/model_999.pt`
+- [2026-10-02 18:01:38] [fb] [b20] HF s42: unseen9 98.8 (lock1 107.4, lock2 108.7, μ0.2 mult 25.2), flat 128.3 (speed 10.53, fall 18%), unseen fall 23%
+- [2026-10-02 18:01:39] [fb] **hf_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixHardMF03FP20-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_11-14-41_fp20_s43/model_999.pt`
+- [2026-10-02 18:19:32] [fb] [b20] HF s43: unseen9 102.1 (lock1 109.0, lock2 112.6, μ0.2 mult 32.5), flat 118.4 (speed 11.02, fall 39%), unseen fall 28%
+- [2026-10-02 18:19:32] [fb] [b20] screen HF: unseen9 diff -7.3 (-10.2, -4.3), unseen fall diff -6 points, μ0.2 mult diff +1.9 → fail
+- [2026-10-02 18:19:32] [fb] [b20] no candidate confirmed → keep FP20
+- [2026-10-02 18:19:32] [fb] [b20] ## batch 20 done
+- [2026-10-02 18:20:51] [fb] [b21] ## batch 21 start (evaluation only)
+- [2026-10-02 18:22:27] [fb] [b21] lockbox8 fp20_s47: boxes_tall_sparse 109.6, stairs_down_hf 78.2, stones_wide 67.3, slope_lowfric 92.8 → 87.0 (fall 39%), official 117.1
+- [2026-10-02 18:23:57] [fb] [b21] lockbox8 fp20_s49: boxes_tall_sparse 119.2, stairs_down_hf 80.8, stones_wide 82.8, slope_lowfric 91.3 → 93.5 (fall 34%), official 127.9
+- [2026-10-02 18:23:57] [fb] [b21] NEW SUBMISSION: FP20_s49 `logs/rsl_rl/ant/2026-10-02_12-48-53_fp20_s49/model_999.pt` (lockbox8 93.5 vs 87.0, fall -6 points, official 127.9)
+- [2026-10-02 18:25:51] [fb] [b21] lockbox7 E0: gaps_wide 20.4, pyramids_high 12.9, wave_short 1.0, rough_lowfric 16.0 → 12.6 (fall 71%)
+- [2026-10-02 18:27:05] [fb] [b21] lockbox7 E4: gaps_wide 26.4, pyramids_high 32.7, wave_short 33.0, rough_lowfric 43.9 → 34.0 (fall 66%)
+- [2026-10-02 18:28:18] [fb] [b21] lockbox7 E15: gaps_wide 30.6, pyramids_high 46.4, wave_short 48.3, rough_lowfric 61.7 → 46.7 (fall 44%)
+- [2026-10-02 18:29:39] [fb] [b21] lockbox7 F3a: gaps_wide 42.5, pyramids_high 56.1, wave_short 51.3, rough_lowfric 67.1 → 54.2 (fall 37%)
+- [2026-10-02 18:30:51] [fb] [b21] lockbox7 M30: gaps_wide 54.1, pyramids_high 60.6, wave_short 47.8, rough_lowfric 51.3 → 53.5 (fall 39%)
+- [2026-10-02 18:32:06] [fb] [b21] lockbox7 AXF40: gaps_wide 54.2, pyramids_high 64.5, wave_short 46.3, rough_lowfric 61.4 → 56.6 (fall 41%)
+- [2026-10-02 18:33:16] [fb] [b21] lockbox7 SP50: gaps_wide 108.2, pyramids_high 105.1, wave_short 67.1, rough_lowfric 58.2 → 84.6 (fall 68%)
+- [2026-10-02 18:34:38] [fb] [b21] lockbox7 FP20: gaps_wide 113.9, pyramids_high 97.2, wave_short 77.5, rough_lowfric 62.5 → 87.8 (fall 36%)
+- [2026-10-02 18:35:49] [fb] [b21] lockbox7 FP20_s49: gaps_wide 118.1, pyramids_high 120.0, wave_short 79.8, rough_lowfric 57.7 → 93.9 (fall 40%)
+- [2026-10-02 18:36:05] [fb] [b21] official fp20_s47 without override (seed 24): [RESULT] Episode reward total: mean=121.517974, std=43.967595
+- [2026-10-02 18:36:05] [fb] [b21] ## batch 21 done
+- [2026-10-02 18:37:35] [fb] [b22] ## batch 22 start (descriptive penalty sweep from SP50 s42/43)
+- [2026-10-02 18:37:35] [fb] **fp10_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP10-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-23-26_sp50_s42/model_999.pt`
+- [2026-10-02 18:48:22] [fb] **fp10_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP10-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-41-15_sp50_s43/model_999.pt`
+- [2026-10-02 18:59:06] [fb] **fp35_s42 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP35-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-23-26_sp50_s42/model_999.pt`
+- [2026-10-02 19:09:48] [fb] **fp35_s43 start** | train_finetune.py | task Isaac-Ant-R9-AllMixWideMF04FP35-v0 | train overrides ['agent.algorithm.entropy_coef=0.005'] | 1000 it | warm start `logs/rsl_rl/ant/2026-10-02_06-41-15_sp50_s43/model_999.pt`
+- [2026-10-02 19:20:29] [fb] [b22] curve C60 (0/fall): unseen9 121.8, unseen fall 44%, flat fall 50%, flat speed 13.05, μ0.2 mult 24.7
+- [2026-10-02 19:34:26] [fb] [b22] curve FP10 (-10/fall): unseen9 108.3, unseen fall 38%, flat fall 34%, flat speed 11.59, μ0.2 mult 21.6
+- [2026-10-02 19:34:26] [fb] [b22] curve FP20 (-20/fall): unseen9 107.7, unseen fall 31%, flat fall 38%, flat speed 11.14, μ0.2 mult 26.9
+- [2026-10-02 19:49:49] [fb] [b22] curve FP35 (-35/fall): unseen9 83.6, unseen fall 27%, flat fall 25%, flat speed 9.45, μ0.2 mult 12.8
+- [2026-10-02 19:49:49] [fb] [b22] curve FP50 (-50/fall): unseen9 55.9, unseen fall 37%, flat fall 40%, flat speed 8.56, μ0.2 mult -6.0
+- [2026-10-02 19:49:49] [fb] [b22] ## batch 22 done

@@ -162,3 +162,60 @@ for _play in (False, True):
             "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:AntPPORunnerCfg",
         },
     )
+
+# batch 11 (share-fb, 2026-10-01): E15 environment (R2 Oracle) with an LSTM policy or left-right symmetry augmentation
+for _name, _agent in (("OracleLSTM", "AntPPOLSTMRunnerCfg"), ("OracleSym", "AntPPOSymRunnerCfg")):
+    for _play in (False, True):
+        gym.register(
+            id=f"Isaac-Ant-R6-{_name}{'-Play' if _play else ''}-v0",
+            entry_point="isaaclab.envs:ManagerBasedRLEnv",
+            disable_env_checker=True,
+            kwargs={
+                "env_cfg_entry_point": f"{__name__}.ant_rough2_env_cfg:AntR2Oracle{'Play' if _play else ''}EnvCfg",
+                "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_extra_cfg:{_agent}",
+            },
+        )
+
+# batch 12 (share-fb, 2026-10-01): AllMix + low friction, AllMix + left-right symmetry augmentation
+for _id, _env, _agent in (
+    ("R7-AllMixLowFric", "ant_rough5_env_cfg:AntR5AllMixLowFric", "rsl_rl_ppo_cfg:AntPPORunnerCfg"),
+    ("R7-AllMixSym", "ant_rough5_env_cfg:AntR5AllMix", "rsl_rl_ppo_extra_cfg:AntPPOSymRunnerCfg"),
+):
+    for _play in (False, True):
+        _env_cls = _env if not _play else "ant_rough5_env_cfg:AntR5AllMix"  # Play is the AllMix Play config
+        gym.register(
+            id=f"Isaac-Ant-{_id}{'-Play' if _play else ''}-v0",
+            entry_point="isaaclab.envs:ManagerBasedRLEnv",
+            disable_env_checker=True,
+            kwargs={
+                "env_cfg_entry_point": f"{__name__}.{_env_cls}{'Play' if _play else ''}EnvCfg",
+                "rsl_rl_cfg_entry_point": f"{agents.__name__}.{_agent}",
+            },
+        )
+
+# batch 13 (share-fb, 2026-10-02): AllMix + moderate / mild low friction (Play = AllMix Play)
+for _name in ("MF02", "MF04"):
+    for _play in (False, True):
+        gym.register(
+            id=f"Isaac-Ant-R8-AllMix{_name}{'-Play' if _play else ''}-v0",
+            entry_point="isaaclab.envs:ManagerBasedRLEnv",
+            disable_env_checker=True,
+            kwargs={
+                "env_cfg_entry_point": f"{__name__}.ant_rough5_env_cfg:AntR5AllMix{_name if not _play else ''}{'Play' if _play else ''}EnvCfg",
+                "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:AntPPORunnerCfg",
+            },
+        )
+
+# batch 14 (share-fb, 2026-10-02): AllMix with per-tile random difficulty, alone and with mild low friction
+for _name in ("Wide", "WideMF04", "WideMF02", "WideMF03", "HardMF04", "HardMF02", "WideMF04FP20", "WideMF04FP50", "WideMF04FP30",
+              "WideMF03FP20", "HardMF04FP20", "WideMF03FP30", "HardMF04FP30", "HardMF03FP20", "WideMF04FP10", "WideMF04FP35"):  # batch 15-22
+    for _play in (False, True):
+        gym.register(
+            id=f"Isaac-Ant-R9-AllMix{_name}{'-Play' if _play else ''}-v0",
+            entry_point="isaaclab.envs:ManagerBasedRLEnv",
+            disable_env_checker=True,
+            kwargs={
+                "env_cfg_entry_point": f"{__name__}.ant_rough5_env_cfg:AntR5AllMix{_name if not _play else ''}{'Play' if _play else ''}EnvCfg",
+                "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:AntPPORunnerCfg",
+            },
+        )

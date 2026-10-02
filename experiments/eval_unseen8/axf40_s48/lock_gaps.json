@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_05-37-57_axf40_s48/model_999.pt",
+  "task": "Isaac-Ant-R5-AllMix-Play-v0",
+  "terrain": "lock_gaps",
+  "friction": 1.0,
+  "terrain_seed": 0,
+  "combine_mode": "average",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 80.91915893554688,
+  "return_std": 27.812549591064453,
+  "return_min": 0.7977572679519653,
+  "return_median": 90.55447387695312,
+  "episode_length_mean": 866.5399780273438,
+  "fall_rate": 0.20999999344348907,
+  "upside_down_at_end_rate": 0.11999999731779099,
+  "distance_x_mean": 87.54285430908203,
+  "distance_x_max": 117.59629821777344,
+  "speed_x_mean": 5.883977890014648
+}

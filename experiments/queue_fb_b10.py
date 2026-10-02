@@ -13,6 +13,7 @@ import statistics as st
 import subprocess
 import sys
 import time
+from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import overnight as o  # noqa: E402
@@ -36,7 +37,8 @@ def log(text):
 
 def isaac_busy():
     """Any other Isaac Lab training / playing / evaluation process (e.g. the user watching play.py)."""
-    pattern = r"rsl_rl/(train|train_finetune|play|play_one_episode|evaluate)\.py"
+    # anchored to the python process itself (14:15 a launch shell containing the script text blocked the queue)
+    pattern = r"^\S*/python3? scripts/reinforcement_learning/rsl_rl/(train|train_finetune|play|play_one_episode|evaluate)\.py"
     return subprocess.run(["pgrep", "-f", pattern], stdout=subprocess.DEVNULL).returncode == 0
 
 
@@ -46,7 +48,9 @@ def wait_gpu():
 
 
 def evaluate(ckpt, play, terrain, out, over):
-    if not os.path.exists(out):
+    for _ in range(2):  # one retry: Isaac Sim occasionally aborts (12:41 "free(): corrupted unsorted chunks")
+        if os.path.exists(out):
+            break
         wait_gpu()
         os.makedirs(os.path.dirname(out), exist_ok=True)
         o.run(["./isaaclab.sh", "-p", f"{R}/evaluate.py", "--task", play, "--terrain", terrain, "--num_envs", "100",
@@ -68,7 +72,10 @@ def train(run, seed, iters):
 
 
 def metrics(run, ckpt, play, over):
-    if not os.path.exists(f"experiments/eval/{run}/boxes_mid_f0.2.json"):
+    for _ in range(2):  # one retry of the sweep if any condition crashed (see evaluate)
+        if os.path.exists(f"experiments/eval/{run}/boxes_mid_f0.2.json") and all(
+                os.path.exists(f"experiments/eval/{run}/{c}.json") for c in o.HELD_OUT):
+            break
         wait_gpu()
         subprocess.run(["bash", f"{R}/eval_sweep.sh", ckpt, f"experiments/eval/{run}", play, *over],
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -88,6 +95,9 @@ def fmt(name, m):
 
 def main():
     t0 = time.time()
+    # the shared train() helper still carried the overnight guard "no new training after 2026-10-01 08:00";
+    # this batch has its own 6 h limit (NO_START_AFTER_HOURS), so move the shared guard to the LMS deadline
+    b5.NO_NEW_TRAIN_AFTER = datetime(2026, 10, 6, 20, 0)
     log("## batch 10 start (AllMix: train on every EVAL_TERRAINS type; test = lockbox 1 + 2)")
 
     # 0) smoke: config + terrain build + 2 training iterations; E0 sanity on lockbox 2 (E0 is not a candidate)

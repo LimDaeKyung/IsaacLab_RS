@@ -1,0 +1,25 @@
+{
+  "checkpoint": "/home/share/IsaacLab_RS/docs/assignment1/models/f3a_final_s47.pt",
+  "task": "Isaac-Ant-R2-Oracle-Play-v0",
+  "terrain": "lock7_rough_lowfric",
+  "friction": 0.4,
+  "terrain_seed": 0,
+  "combine_mode": "multiply",
+  "hydra_overrides": [
+    "agent.algorithm.entropy_coef=0.005"
+  ],
+  "seed": 24,
+  "diag_height_relative": false,
+  "diag_world_z_termination": false,
+  "num_episodes": 100,
+  "return_mean": 67.06153106689453,
+  "return_std": 22.824514389038086,
+  "return_min": 1.0374658107757568,
+  "return_median": 76.1483383178711,
+  "episode_length_mean": 831.5999755859375,
+  "fall_rate": 0.2800000011920929,
+  "upside_down_at_end_rate": 0.2800000011920929,
+  "distance_x_mean": 66.90623474121094,
+  "distance_x_max": 91.58612060546875,
+  "speed_x_mean": 4.684271812438965
+}
