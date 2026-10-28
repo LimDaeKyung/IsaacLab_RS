@@ -1,0 +1,24 @@
+실습 과제 2 평가 명령어 (Agibot Toy2Box, BC-RNN: 스크립트 조종 시범 30개 + Mimic 500, 학습 seed 101)
+
+[환경]
+conda activate lerobot-arena
+cd ~/IsaacLab_RS
+
+[평가] 강의자료 44쪽 / 참고자료 play 명령과 같은 형식 (검증 seed 42)
+./isaaclab.sh -p scripts/imitation_learning/robomimic/play.py \
+  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+  --checkpoint docs/assignment2/models/bc_rnn_auto30_mimic500_s101_epoch2000.pth \
+  --num_rollouts 100 \
+  --horizon 800 \
+  --seed 42 \
+  --headless
+
+[참고]
+- 우리 측정값 (위 명령 그대로): Successful trials: 65, out of 100 trials / Success rate: 0.65
+- 같은 체크포인트가 학습 로그 폴더에도 있다:
+  logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0/auto30_mimic500_s101/20261028162809/models/model_epoch_2000.pth
+  (SHA256 f5003cce72cdeb954b6ff12b4fad514b85a6f26f27863c337c00a20491eb1409)
+- 환경, 성공 판정, 종료 조건, 학습 config(bc_rnn_low_dim.json)는 수정하지 않았다.
+- 영상이 필요하면 --video --video_length 1000 --video_folder ./videos/agibot_bc_auto30 을 붙인다.
+- 원본 시범 30개는 사람이 아니라 스크립트(scripts/tools/record_demos_auto.py)가 키보드와 같은 형식으로 조종했다.
+  자세한 내용은 docs/assignment2/README.md 참고.

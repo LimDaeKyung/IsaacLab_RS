@@ -48,3 +48,8 @@ logs/rsl_rl/ant/*_smoke_*/
 experiments/videos_sp50/*.json
 experiments/videos_fp20/
 docs/assignment1/models/exported/
+# assignment 2: large/regenerable data (Mimic output > 100 MB GitHub limit), local videos, robomimic logs
+datasets/*_mimic_*.hdf5
+datasets/watch_test.hdf5
+videos/
+logs/robomimic/

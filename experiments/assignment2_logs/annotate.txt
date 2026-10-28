@@ -1,0 +1,136 @@
+[3g
+H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H   
+[INFO] Using python from: /home/share/miniforge3/envs/lerobot-arena/bin/python
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/share/IsaacLab_RS/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/share/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/share/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261028_142118.log
+/home/share/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/gymnasium/envs/registration.py:636: UserWarning: [33mWARN: Overriding environment Isaac-Stack-Cube-Franka-IK-Rel-Skillgen-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/share/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/gymnasium/envs/registration.py:636: UserWarning: [33mWARN: Overriding environment Isaac-Stack-Cube-Bin-Franka-IK-Rel-Mimic-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+[INFO]: Parsing configuration from: isaaclab_mimic.envs.agibot_place_toy2box_mimic_env_cfg:RmpFlowAgibotPlaceToy2BoxMimicEnvCfg
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.05
+[INFO]: Time taken for scene creation : 1.695987 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 3.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : False
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.365037 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
++--------+-------+-------+
++--------+-------+-------+
++--------+-------+-------+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++------------------------------------+
++---------+--------------------------+
++---------+--------------------------+
++---------+--------------------------+
+[INFO] Recorder Manager:  <RecorderManager> contains 7 active terms.
++--------------------------------------------------+
++-------+------------------------------------------+
++-------+------------------------------------------+
++-------+------------------------------------------+
+[INFO]: Loading RMPFlow controller URDF from: https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Controllers/RmpFlowAssets/agibot/agibot.urdf
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
++-------+----------------+-----------+
++-------+----------------+-----------+
++-------+----------------+-----------+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++----------------------------------------------+
++--------+----------------------------+--------+
++--------+----------------------------+--------+
++--------+----------------------------+--------+
++--------------------------------------------+
++--------------+--------------+--------------+
++--------------+--------------+--------------+
++--------------+--------------+--------------+
+[INFO] Termination Manager:  <TerminationManager> contains 0 active terms.
++----------------------------+
++--------+-------+-----------+
++--------+-------+-----------+
++--------+-------+-----------+
+[INFO] Reward Manager:  <RewardManager> contains 0 active terms.
++-----------------------+
++-------+------+--------+
++-------+------+--------+
++-------+------+--------+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
++-----------+----------+
++-----------+----------+
++-----------+----------+
+[INFO]: Completed setting up the environment...
+Annotating episode #0 (demo_0)
+	Exported the annotated episode.
+Annotating episode #1 (demo_1)
+	Exported the annotated episode.
+Annotating episode #2 (demo_10)
+	Exported the annotated episode.
+Annotating episode #3 (demo_11)
+	Exported the annotated episode.
+Annotating episode #4 (demo_12)
+	Exported the annotated episode.
+Annotating episode #5 (demo_13)
+	Exported the annotated episode.
+Annotating episode #6 (demo_14)
+	Exported the annotated episode.
+Annotating episode #7 (demo_15)
+	Exported the annotated episode.
+Annotating episode #8 (demo_16)
+	Exported the annotated episode.
+Annotating episode #9 (demo_17)
+	Exported the annotated episode.
+Annotating episode #10 (demo_18)
+	Exported the annotated episode.
+Annotating episode #11 (demo_19)
+	Exported the annotated episode.
+Annotating episode #12 (demo_2)
+	Exported the annotated episode.
+Annotating episode #13 (demo_20)
+	Exported the annotated episode.
+Annotating episode #14 (demo_21)
+	Exported the annotated episode.
+Annotating episode #15 (demo_22)
+	Exported the annotated episode.
+Annotating episode #16 (demo_23)
+	Exported the annotated episode.
+Annotating episode #17 (demo_24)
+	Exported the annotated episode.
+Annotating episode #18 (demo_25)
+	Exported the annotated episode.
+Annotating episode #19 (demo_26)
+	Exported the annotated episode.
+Annotating episode #20 (demo_27)
+	Exported the annotated episode.
+Annotating episode #21 (demo_28)
+	Exported the annotated episode.
+Annotating episode #22 (demo_29)
+	Exported the annotated episode.
+Annotating episode #23 (demo_3)
+	Exported the annotated episode.
+Annotating episode #24 (demo_4)
+	Exported the annotated episode.
+Annotating episode #25 (demo_5)
+	Exported the annotated episode.
+Annotating episode #26 (demo_6)
+	Exported the annotated episode.
+Annotating episode #27 (demo_7)
+	Exported the annotated episode.
+Annotating episode #28 (demo_8)
+	Exported the annotated episode.
+Annotating episode #29 (demo_9)
+	Exported the annotated episode.
+Exported 30 (out of 30) annotated episodes.
+Successful task completions: 30
+Exiting the app.

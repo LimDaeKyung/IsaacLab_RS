@@ -1,5 +1,8 @@
 # 처음 보는 지형에서도 걷는 Ant: 평지 원본 → 진단·수정 → 지형 다양화 → 빠른 걸음 → 넘어짐 벌점
 
+> **실습 과제 2 (Agibot Toy2Box 모방학습)** 결과는 [docs/assignment2/README.md](docs/assignment2/README.md)에 있습니다.
+> 평가 명령: [EVAL_COMMAND_assignment2.txt](EVAL_COMMAND_assignment2.txt) · 현재 결과: BC-RNN 65 / 100 (조교 시연 26 / 100)
+
 로보틱스 시뮬레이션 실습 과제 1(Isaac Lab `Isaac-Ant-v0`, RSL-RL PPO)의 결과 저장소입니다.
 평지에서만 걷던 원본 Ant가 **학습 때 보지 못한 지형**에서도 걷도록, 원인을 하나씩 진단하고 환경을 바꿔 가며 학습한 과정을 정리했습니다.
 
